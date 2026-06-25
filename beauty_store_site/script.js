@@ -4,13 +4,34 @@
 const sliderInput = document.getElementById('slider-input');
 const sliderBefore = document.getElementById('slider-before');
 const sliderHandle = document.getElementById('slider-handle');
+const sliderContainer = document.getElementById('slider-container') || (sliderInput ? sliderInput.parentElement : null);
 
-if (sliderInput && sliderBefore && sliderHandle) {
-    sliderInput.addEventListener('input', (e) => {
-        const value = e.target.value;
-        sliderBefore.style.clipPath = `polygon(0 0, ${value}% 0, ${value}% 100%, 0 100%)`;
-        sliderHandle.style.left = `${value}%`;
+if (sliderContainer && sliderBefore && sliderHandle) {
+    let isDragging = false;
+
+    sliderContainer.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        updateSlider(e.clientX);
     });
+    window.addEventListener('pointerup', () => { isDragging = false; });
+    window.addEventListener('pointermove', (e) => {
+        if (isDragging) updateSlider(e.clientX);
+    });
+    sliderContainer.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+    sliderContainer.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    function updateSlider(clientX) {
+        const rect = sliderContainer.getBoundingClientRect();
+        let percent = ((clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        sliderBefore.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+        sliderHandle.style.left = `${percent}%`;
+        if (sliderInput) sliderInput.value = percent;
+    }
 }
 
 // --- AI Skincare Routine Quiz Logic ---

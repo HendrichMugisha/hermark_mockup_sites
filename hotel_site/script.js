@@ -4,13 +4,34 @@
 const spaSliderInput = document.getElementById('spa-slider-input');
 const spaSliderBefore = document.getElementById('spa-slider-before');
 const spaSliderHandle = document.getElementById('spa-slider-handle');
+const spaSliderContainer = document.getElementById('spa-slider-container') || (spaSliderInput ? spaSliderInput.parentElement : null);
 
-if (spaSliderInput && spaSliderBefore && spaSliderHandle) {
-    spaSliderInput.addEventListener('input', (e) => {
-        const value = e.target.value;
-        spaSliderBefore.style.clipPath = `polygon(0 0, ${value}% 0, ${value}% 100%, 0 100%)`;
-        spaSliderHandle.style.left = `${value}%`;
+if (spaSliderContainer && spaSliderBefore && spaSliderHandle) {
+    let isDragging = false;
+
+    spaSliderContainer.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        updateSpaSlider(e.clientX);
     });
+    window.addEventListener('pointerup', () => { isDragging = false; });
+    window.addEventListener('pointermove', (e) => {
+        if (isDragging) updateSpaSlider(e.clientX);
+    });
+    spaSliderContainer.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) updateSpaSlider(e.touches[0].clientX);
+    }, { passive: true });
+    spaSliderContainer.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) updateSpaSlider(e.touches[0].clientX);
+    }, { passive: true });
+
+    function updateSpaSlider(clientX) {
+        const rect = spaSliderContainer.getBoundingClientRect();
+        let percent = ((clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        spaSliderBefore.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+        spaSliderHandle.style.left = `${percent}%`;
+        if (spaSliderInput) spaSliderInput.value = percent;
+    }
 }
 
 // --- Room Features Expand Logic ---

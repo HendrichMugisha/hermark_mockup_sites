@@ -426,29 +426,29 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16">
             <!-- Slider -->
             <div class="w-full lg:w-1/2 flex items-center justify-center">
-                <div class="relative w-full max-w-[550px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-brand-travertine select-none">
+                <div id="spa-slider-container" class="relative w-full max-w-[550px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-brand-travertine select-none cursor-ew-resize" style="touch-action: none;">
                     <!-- After Image (Relaxed Spa State) -->
                     <img src="images/spa_after.png" alt="Spa Tranquility State" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
-                    <div class="absolute bottom-6 right-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40 z-10">
+                    <div class="absolute bottom-6 right-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40 z-10 pointer-events-none">
                         Post-Treatment: Transcendent
                     </div>
 
                     <!-- Before Image (Pre-Spa State) -->
                     <div id="spa-slider-before" class="absolute inset-0 pointer-events-none z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
                         <img src="images/spa_before.png" alt="Pre Spa State" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
-                        <div class="absolute bottom-6 left-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40">
+                        <div class="absolute bottom-6 left-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40 pointer-events-none">
                             Pre-Treatment: Arrive
                         </div>
                     </div>
 
                     <!-- Slider Handle -->
                     <div id="spa-slider-handle" class="absolute top-0 bottom-0 left-1/2 w-1.5 bg-brand-brass flex items-center justify-center z-20 pointer-events-none" style="transform: translateX(-50%);">
-                        <div class="w-12 h-12 rounded-full bg-brand-forest border-2 border-brand-brass text-brand-brass flex items-center justify-center shadow-2xl pointer-events-auto">
+                        <div class="w-12 h-12 rounded-full bg-brand-forest border-2 border-brand-brass text-brand-brass flex items-center justify-center shadow-2xl pointer-events-none">
                             <span class="material-symbols-outlined text-sm">swap_horiz</span>
                         </div>
                     </div>
 
-                    <input type="range" id="spa-slider-input" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+                    <input type="range" id="spa-slider-input" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 pointer-events-none z-30">
                 </div>
             </div>
 

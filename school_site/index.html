@@ -89,12 +89,16 @@
     </div>
 
     <!-- Hero Section: Dynamic Video Montage & Floating Stat Cards -->
-    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepnavy py-20">
-        <!-- Ambient Background Video Loop -->
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none z-0">
-            <source src="images/University_lecture_hall_to_robot._202606250910.mp4" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-deepnavy/70 via-transparent to-brand-deepnavy z-0 pointer-events-none"></div>
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-brand-dark">
+        <!-- Absolute Hero Video Background -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-black/40">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none">
+                <source src="images/University_lecture_hall_to_robot…_202606250910.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Overlay Gradients -->
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/20 to-brand-dark"></div>
+        </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-8 space-y-8 text-left">
