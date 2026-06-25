@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atelier Noir | Avant-Garde Streetwear & High Fashion">
+    <title>Atelier Noir | Avant-Garde Streetwear</title>
+    
+    <!-- Google Fonts: Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons & Favicon -->
+    <link rel="icon" href="https://api.iconify.design/material-symbols:styler.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cream: '#f9f6f0',
+                            sepia: '#3b2f2f',
+                            olive: '#4a5240',
+                            dark: '#1c1b1a',
+                            light: '#f1ede4',
+                            muted: '#7a7571'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-dark selection:text-brand-cream">
+
+    <!-- Built by Hermark Tech Floating Badge -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://hermarktech.com/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-brand-dark text-brand-cream border border-brand-cream/20 shadow-[0_4px_25px_rgba(0,0,0,0.25)] rounded-full hover:scale-105 transition-all duration-300 group">
+            <span class="w-2 h-2 rounded-full bg-[#007a87] animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase group-hover:text-[#007a87] transition-colors">Built by Hermark Tech</span>
+            <span class="material-symbols-outlined text-[14px] text-brand-cream/50 group-hover:translate-x-0.5 transition-transform">arrow_forward_ios</span>
+        </a>
+    </div>
+
+    <!-- Navigation Header with Rich Megamenu Trigger -->
+    <header class="sticky top-0 z-40 w-full bg-brand-cream/90 backdrop-blur-md border-b border-brand-dark/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a href="#" class="text-2xl md:text-3xl font-bold tracking-[0.2em] text-brand-dark uppercase">Atelier <span class="font-light">Noir</span></a>
+                <nav class="hidden lg:flex items-center gap-8 text-xs font-bold tracking-[0.25em] uppercase text-brand-dark">
+                    <!-- Megamenu Trigger -->
+                    <div class="group relative py-8">
+                        <span class="cursor-pointer hover:text-brand-muted transition-colors flex items-center gap-1">
+                            Collections <span class="material-symbols-outlined text-base">expand_more</span>
+                        </span>
+                        <!-- Rich Megamenu -->
+                        <div class="absolute top-24 left-0 w-[700px] bg-brand-dark text-brand-cream p-8 rounded-3xl shadow-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 grid grid-cols-3 gap-8 border border-white/10 z-50">
+                            <div class="space-y-4">
+                                <p class="text-[10px] tracking-[0.3em] text-brand-cream/50 uppercase font-bold">Capsule 01</p>
+                                <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-800 relative group/sub">
+                                    <img src="images/megamenu_capsule_1.png" alt="Brutalist Outerwear" class="w-full h-full object-cover group-hover/sub:scale-105 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent flex items-end p-4">
+                                        <span class="text-xs font-bold tracking-widest uppercase text-white">Brutalist Outerwear</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="text-[10px] tracking-[0.3em] text-brand-cream/50 uppercase font-bold">Capsule 02</p>
+                                <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-800 relative group/sub">
+                                    <img src="images/megamenu_capsule_2.png" alt="Structured Drape" class="w-full h-full object-cover group-hover/sub:scale-105 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent flex items-end p-4">
+                                        <span class="text-xs font-bold tracking-widest uppercase text-white">Structured Drape</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4 flex flex-col justify-between">
+                                <div>
+                                    <p class="text-[10px] tracking-[0.3em] text-brand-cream/50 uppercase font-bold mb-4">Curated Edits</p>
+                                    <ul class="space-y-3 text-xs tracking-widest font-medium text-brand-cream">
+                                        <li><a href="#lookbook" class="hover:text-brand-muted transition-colors">Interactive Lookbook</a></li>
+                                        <li><a href="#catalog" class="hover:text-brand-muted transition-colors">Architectural Knits</a></li>
+                                        <li><a href="#catalog" class="hover:text-brand-muted transition-colors">Avant-Garde Tailoring</a></li>
+                                        <li><a href="#sustainability" class="hover:text-brand-muted transition-colors">Radical Provenance</a></li>
+                                    </ul>
+                                </div>
+                                <a href="#catalog" class="w-full py-3 bg-brand-cream text-brand-dark rounded-xl font-bold text-center hover:bg-white transition-colors text-[11px] tracking-widest uppercase">
+                                    Explore Entire Catalog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#lookbook" class="hover:text-brand-muted transition-colors">Lookbook</a>
+                    <a href="#sustainability" class="hover:text-brand-muted transition-colors">Provenance</a>
+                    <a href="javascript:openVIPModal()" class="text-brand-olive hover:text-brand-dark transition-colors flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">vpn_key</span> VIP Unlock
+                    </a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="openFilterOverlay()" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full border border-brand-dark text-xs font-bold tracking-[0.2em] uppercase text-brand-dark hover:bg-brand-dark hover:text-brand-cream transition-all">
+                    <span class="material-symbols-outlined text-base">tune</span>
+                    Filter Studio
+                </button>
+                <button onclick="openCartDrawer()" class="relative p-3 rounded-full bg-brand-dark text-brand-cream hover:bg-brand-dark/80 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">local_mall</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-brand-olive text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-brand-cream hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Magazine-Style Editorial Collage with Parallax Layout -->
+    <section class="relative min-h-[90vh] max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden">
+        <div class="w-full lg:w-5/12 space-y-8 z-10 text-left">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand-dark text-brand-cream">
+                <span class="w-2 h-2 rounded-full bg-brand-olive animate-pulse"></span>
+                <span class="text-[10px] uppercase font-bold tracking-[0.25em]">Autumn / Winter 2026</span>
+            </div>
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[0.95] text-brand-dark uppercase">
+                Structured <br>
+                <span class="font-light tracking-tighter text-brand-sepia">Dissonance.</span>
+            </h1>
+            <p class="text-base md:text-lg text-brand-muted font-light leading-relaxed max-w-lg">
+                Avant-garde streetwear engineered through architectural geometry and premium deadstock heavy drapery. Designed for the relentless urban individualist.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a href="#catalog" class="px-8 py-5 rounded-full bg-brand-dark text-brand-cream text-xs font-bold tracking-[0.2em] uppercase hover:bg-black transition-all shadow-xl flex items-center justify-center gap-3">
+                    Discover The Collection
+                    <span class="material-symbols-outlined text-base">east</span>
+                </a>
+                <a href="#lookbook" class="px-8 py-5 rounded-full border border-brand-dark/30 text-brand-dark text-xs font-bold tracking-[0.2em] uppercase hover:border-brand-dark transition-all text-center flex items-center justify-center">
+                    Interactive Lookbook
+                </a>
+            </div>
+        </div>
+
+        <!-- Editorial Collage -->
+        <div class="w-full lg:w-7/12 relative min-h-[600px] flex items-center justify-center select-none py-12">
+            <!-- Collage Image 1 (Background / Large) -->
+            <div class="absolute right-0 top-0 w-8/12 aspect-[3/4] rounded-3xl overflow-hidden bg-brand-light shadow-2xl border-8 border-brand-cream z-10 transform translate-x-4 hover:scale-105 transition-transform duration-700">
+                <img src="images/look_1.avif" alt="Avant Garde Streetwear" class="w-full h-full object-cover">
+                <div class="absolute top-4 right-4 bg-brand-cream text-brand-dark text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full border border-brand-dark/10">Look 01</div>
+            </div>
+
+            <!-- Collage Image 2 (Foreground Left / Medium / Overlapping) -->
+            <div class="absolute left-0 bottom-12 w-6/12 aspect-[4/5] rounded-3xl overflow-hidden bg-brand-light shadow-2xl border-8 border-brand-cream z-20 transform -translate-y-6 hover:scale-105 transition-transform duration-700">
+                <img src="images/look2.avif" alt="Avant Garde Detail" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 bg-brand-dark text-brand-cream text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Look 02</div>
+            </div>
+
+            <!-- Floating Typography Accent -->
+            <div class="absolute bottom-0 right-12 bg-brand-sepia text-brand-cream p-6 rounded-3xl shadow-xl z-30 max-w-xs border border-white/10 hidden md:block">
+                <p class="text-[10px] tracking-[0.2em] uppercase font-bold text-brand-cream/60 mb-1">Architectural Code</p>
+                <p class="text-xs leading-relaxed font-medium">Patterned with zero waste geometric cuts. Crafted from Japanese heavy brushed twill.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Lookbook Section (Hotspots) -->
+    <section id="lookbook" class="py-24 bg-brand-light border-y border-brand-dark/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Living Editorial</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mt-3 uppercase tracking-tight">Interactive Lookbook</h2>
+                <p class="text-brand-muted text-sm mt-4 leading-relaxed">
+                    Hover over the glowing geometric coordinates on our premier seasonal looks to inspect structural materials and instantly secure your fit.
+                </p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto rounded-[2.5rem] overflow-hidden bg-slate-900 shadow-2xl border-8 border-brand-cream">
+                <img src="images/interactive_lookbook.avif" alt="Interactive Lookbook Display" class="w-full h-full object-cover aspect-[16/10] min-h-[500px]">
+
+                <!-- Hotspot 1 -->
+                <div class="absolute top-[30%] left-[35%] z-20 group">
+                    <button class="relative w-8 h-8 rounded-full bg-brand-cream text-brand-dark flex items-center justify-center shadow-2xl hover:scale-125 transition-transform duration-300 border-2 border-brand-dark">
+                        <span class="absolute inset-0 rounded-full bg-brand-cream animate-ping opacity-75"></span>
+                        <span class="relative material-symbols-outlined text-sm">ads_click</span>
+                    </button>
+                    <!-- Tooltip Card -->
+                    <div class="absolute top-10 left-0 w-72 bg-brand-dark text-brand-cream p-6 rounded-2xl shadow-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 border border-white/20 z-30">
+                        <p class="text-[10px] tracking-[0.2em] text-brand-olive uppercase font-bold mb-1">Outerwear</p>
+                        <h4 class="font-bold text-base tracking-tight mb-2">Asymmetrical Twill Parka</h4>
+                        <p class="text-xs text-brand-cream/70 mb-4 leading-relaxed">Water-repellent Japanese dense twill with structural magnetic closure clasps.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="font-bold text-base">$540</span>
+                            <button onclick="addToCart('Asymmetrical Twill Parka', 540, 'images/trill_blazer.avif')" class="px-4 py-2 bg-brand-cream text-brand-dark rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white transition-colors">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 2 -->
+                <div class="absolute top-[60%] left-[55%] z-20 group">
+                    <button class="relative w-8 h-8 rounded-full bg-brand-cream text-brand-dark flex items-center justify-center shadow-2xl hover:scale-125 transition-transform duration-300 border-2 border-brand-dark">
+                        <span class="absolute inset-0 rounded-full bg-brand-cream animate-ping opacity-75"></span>
+                        <span class="relative material-symbols-outlined text-sm">ads_click</span>
+                    </button>
+                    <!-- Tooltip Card -->
+                    <div class="absolute top-10 right-0 w-72 bg-brand-dark text-brand-cream p-6 rounded-2xl shadow-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 border border-white/20 z-30">
+                        <p class="text-[10px] tracking-[0.2em] text-brand-olive uppercase font-bold mb-1">Bottoms</p>
+                        <h4 class="font-bold text-base tracking-tight mb-2">Pleated Modular Cargo Trousers</h4>
+                        <p class="text-xs text-brand-cream/70 mb-4 leading-relaxed">Relaxed drape silhouette featuring detachable tactical pocket assemblies.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="font-bold text-base">$320</span>
+                            <button onclick="addToCart('Pleated Modular Cargo Trousers', 320, 'images/tactical_turtleneck.avif')" class="px-4 py-2 bg-brand-cream text-brand-dark rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white transition-colors">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section with PDP Quickview Trigger -->
+    <section id="catalog" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-sepia uppercase">Seasonal Catalog</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mt-3 uppercase tracking-tight">Structured Drape 01</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openFilterOverlay()" class="px-6 py-3 rounded-full bg-brand-dark text-brand-cream text-xs font-bold tracking-[0.2em] uppercase hover:bg-black transition-all flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base">tune</span> Filter Catalog
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Catalog Card 1 -->
+            <div class="group relative bg-brand-light border border-brand-dark/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative cursor-pointer" onclick="openPDP(1)">
+                    <img src="images/oversized_overstructured.avif" alt="Oversized Structured Overcoat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-x-4 bottom-4 py-4 bg-brand-dark/90 backdrop-blur-md text-brand-cream text-xs font-bold tracking-[0.2em] uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 text-center border border-white/20">
+                        Inspect Anatomy (PDP)
+                    </div>
+                    <span class="absolute top-4 left-4 bg-brand-dark text-brand-cream text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Heavy Drape</span>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow bg-brand-cream border-t border-brand-dark/10">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-muted mb-1">Outerwear</p>
+                        <h3 class="font-bold text-xl text-brand-dark group-hover:text-brand-sepia transition-colors cursor-pointer" onclick="openPDP(1)">Oversized Structured Overcoat</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Premium raw un-dyed boiled wool with exaggerated raglan shoulders.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                        <span class="font-bold text-xl text-brand-dark">$680</span>
+                        <button onclick="addToCart('Oversized Structured Overcoat', 680, 'images/oversized_overstructured.avif')" class="px-5 py-2.5 bg-brand-dark text-brand-cream rounded-full hover:bg-brand-sepia transition-colors text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+                            Add <span class="material-symbols-outlined text-sm">east</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog Card 2 -->
+            <div class="group relative bg-brand-light border border-brand-dark/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative cursor-pointer" onclick="openPDP(2)">
+                    <img src="images/tactical_turtleneck.avif" alt="Tactical Ribbed Turtleneck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-x-4 bottom-4 py-4 bg-brand-dark/90 backdrop-blur-md text-brand-cream text-xs font-bold tracking-[0.2em] uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 text-center border border-white/20">
+                        Inspect Anatomy (PDP)
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow bg-brand-cream border-t border-brand-dark/10">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-muted mb-1">Architectural Knit</p>
+                        <h3 class="font-bold text-xl text-brand-dark group-hover:text-brand-sepia transition-colors cursor-pointer" onclick="openPDP(2)">Tactical Ribbed Turtleneck</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Dense 12-gauge merino yarn engineered for absolute wind-stopping insulation.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                        <span class="font-bold text-xl text-brand-dark">$310</span>
+                        <button onclick="addToCart('Tactical Ribbed Turtleneck', 310, 'images/tactical_turtleneck.avif')" class="px-5 py-2.5 bg-brand-dark text-brand-cream rounded-full hover:bg-brand-sepia transition-colors text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+                            Add <span class="material-symbols-outlined text-sm">east</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog Card 3 -->
+            <div class="group relative bg-brand-light border border-brand-dark/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative cursor-pointer" onclick="openPDP(3)">
+                    <img src="images/trill_blazer.avif" alt="Asymmetrical Twill Blazer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-x-4 bottom-4 py-4 bg-brand-dark/90 backdrop-blur-md text-brand-cream text-xs font-bold tracking-[0.2em] uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 text-center border border-white/20">
+                        Inspect Anatomy (PDP)
+                    </div>
+                    <span class="absolute top-4 left-4 bg-brand-olive text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Editorial Pick</span>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow bg-brand-cream border-t border-brand-dark/10">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-muted mb-1">Avant-Garde Tailoring</p>
+                        <h3 class="font-bold text-xl text-brand-dark group-hover:text-brand-sepia transition-colors cursor-pointer" onclick="openPDP(3)">Asymmetrical Twill Blazer</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Off-center lapel structure with concealed internal harness webbings.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                        <span class="font-bold text-xl text-brand-dark">$590</span>
+                        <button onclick="addToCart('Asymmetrical Twill Blazer', 590, 'images/trill_blazer.avif')" class="px-5 py-2.5 bg-brand-dark text-brand-cream rounded-full hover:bg-brand-sepia transition-colors text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+                            Add <span class="material-symbols-outlined text-sm">east</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story & Sustainability: Split-Screen Sticky Video & Scrolling Text -->
+    <section id="sustainability" class="py-24 bg-brand-dark text-brand-cream border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16">
+            <!-- Sticky Video / Image on Left -->
+            <div class="w-full lg:w-1/2 lg:sticky lg:top-32 aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-800 border border-white/20 shadow-2xl relative">
+                <img src="images/zero_waste_geometry.avif" alt="Sustainable Manufacturing Studio" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent flex items-end p-8">
+                    <div>
+                        <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Zero Carbon Provenance</span>
+                        <h4 class="text-2xl font-bold tracking-tight text-white mt-2">The Atelier Noir Code</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrolling Brand Heritage Text on Right -->
+            <div class="w-full lg:w-1/2 space-y-16 py-12">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Pillar 01</span>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight uppercase">Deadstock Provenance.</h3>
+                    <p class="text-brand-cream/70 text-base leading-relaxed">
+                        We reject the wasteful continuous cycle of seasonal fast production. Over 80% of our heavy twills, merino yarns, and technical nylons are salvaged from luxury European deadstock warehouses, preventing immense architectural waste from entering landfills.
+                    </p>
+                </div>
+
+                <div class="space-y-6 pt-12 border-t border-white/10">
+                    <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Pillar 02</span>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight uppercase">Zero-Waste Geometry.</h3>
+                    <p class="text-brand-cream/70 text-base leading-relaxed">
+                        Our pattern architects employ complex mathematical tiling algorithms to cut garment panels. This achieves a remarkable 97% fabric utilization rate, transforming the inevitable remaining 3% into structural internal webbings and pocket reinforcers.
+                    </p>
+                </div>
+
+                <div class="space-y-6 pt-12 border-t border-white/10">
+                    <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Pillar 03</span>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight uppercase">Lifetime Reconstruction.</h3>
+                    <p class="text-brand-cream/70 text-base leading-relaxed">
+                        An Atelier Noir piece is designed for perpetual utility. Every garment includes a lifetime structural repair warranty. Should an urban expedition compromise a seam, our master tailors will meticulously reconstruct the damage free of charge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Immersive Fullscreen Filter Overlay Modal -->
+    <div id="filter-overlay" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0 bg-brand-dark/95 backdrop-blur-xl text-brand-cream flex flex-col justify-between p-8 md:p-16">
+        <div class="w-full max-w-5xl mx-auto flex items-center justify-between pb-8 border-b border-white/10 pointer-events-auto">
+            <div>
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Refine & Inspect</span>
+                <h3 class="text-3xl md:text-5xl font-bold tracking-tight uppercase mt-1">Filter Studio</h3>
+            </div>
+            <button onclick="closeFilterOverlay()" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+
+        <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 my-auto py-12 pointer-events-auto overflow-y-auto">
+            <!-- Filter Column 1 -->
+            <div class="space-y-6">
+                <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-olive">Architectural Category</h4>
+                <div class="space-y-3 text-sm font-medium tracking-wide">
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" checked class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Heavy Drape Outerwear (12)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" checked class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Architectural Knits (8)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Modular Cargo Bottoms (6)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Structural Headwear (4)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Filter Column 2 -->
+            <div class="space-y-6">
+                <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-olive">Structural Material</h4>
+                <div class="space-y-3 text-sm font-medium tracking-wide">
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" checked class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Japanese Dense Twill (9)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" checked class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Boiled Wool Deadstock (7)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Technical Ballistic Nylon (5)</span>
+                    </label>
+                    <label class="flex items-center gap-4 cursor-pointer hover:text-brand-olive transition-colors">
+                        <input type="checkbox" class="w-4 h-4 accent-brand-olive" onchange="updateFilterCount()">
+                        <span>Raw Selvedge Denim (4)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Filter Column 3 -->
+            <div class="space-y-6">
+                <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-olive">Colorway Scheme</h4>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="this.classList.toggle('border-brand-olive'); updateFilterCount();" class="px-5 py-2.5 rounded-full border-2 border-brand-olive bg-black text-white text-xs font-bold tracking-widest uppercase">Obsidian</button>
+                    <button onclick="this.classList.toggle('border-brand-olive'); updateFilterCount();" class="px-5 py-2.5 rounded-full border-2 border-white/20 bg-stone-700 text-white text-xs font-bold tracking-widest uppercase">Concrete</button>
+                    <button onclick="this.classList.toggle('border-brand-olive'); updateFilterCount();" class="px-5 py-2.5 rounded-full border-2 border-white/20 bg-[#4a5240] text-white text-xs font-bold tracking-widest uppercase">Muted Olive</button>
+                    <button onclick="this.classList.toggle('border-brand-olive'); updateFilterCount();" class="px-5 py-2.5 rounded-full border-2 border-white/20 bg-[#3b2f2f] text-white text-xs font-bold tracking-widest uppercase">Sepia</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full max-w-5xl mx-auto pt-8 border-t border-white/10 flex items-center justify-between pointer-events-auto">
+            <button onclick="resetFilters()" class="text-xs font-bold tracking-[0.2em] uppercase text-white/50 hover:text-white transition-colors">
+                Reset All Parameters
+            </button>
+            <button onclick="closeFilterOverlay()" id="filter-results-btn" class="px-10 py-5 bg-brand-cream text-brand-dark rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-all shadow-xl">
+                Show 20 Refined Results
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Detail Page (PDP) Fullscreen Modal (Sticky Buy-Box & Infinite Scroll) -->
+    <div id="pdp-modal" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0 bg-brand-cream text-brand-dark flex flex-col">
+        <!-- Sticky Modal Header -->
+        <div class="sticky top-0 z-50 w-full bg-brand-cream/90 backdrop-blur-md border-b border-brand-dark/10 h-20 flex items-center justify-between px-8 pointer-events-auto">
+            <span class="font-bold text-xs tracking-[0.25em] uppercase text-brand-dark">Anatomy Inspection (PDP)</span>
+            <button onclick="closePDP()" class="p-2.5 rounded-full bg-brand-dark text-brand-cream hover:bg-black transition-colors">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+
+        <!-- PDP Content Split Layout -->
+        <div class="flex-grow flex flex-col lg:flex-row pointer-events-auto overflow-y-auto max-w-7xl mx-auto w-full px-6 py-12 gap-16">
+            <!-- Left: Infinite Vertical Scroll of High-Res Images -->
+            <div class="w-full lg:w-7/12 space-y-8">
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden bg-slate-200 border border-brand-dark/10 shadow-lg">
+                    <img id="pdp-img-1" src="images/oversized_overstructured.avif" alt="PDP Angle 1" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden bg-slate-200 border border-brand-dark/10 shadow-lg">
+                    <img id="pdp-img-2" src="images/pdp_angle_2.png" alt="PDP Angle 2" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-3xl overflow-hidden bg-slate-200 border border-brand-dark/10 shadow-lg">
+                    <img id="pdp-img-3" src="images/pdp_angle_3.png" alt="PDP Angle 3" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Right: Sticky Buy-Box -->
+            <div class="w-full lg:w-5/12 lg:sticky lg:top-32 space-y-8 h-fit pb-12">
+                <div class="space-y-2">
+                    <span id="pdp-tag" class="text-xs font-bold tracking-[0.3em] text-brand-muted uppercase">Outerwear</span>
+                    <h2 id="pdp-title" class="text-3xl md:text-5xl font-bold tracking-tight uppercase text-brand-dark">Oversized Structured Overcoat</h2>
+                    <p id="pdp-price" class="text-2xl font-bold text-brand-sepia pt-2">$680</p>
+                </div>
+
+                <p id="pdp-desc" class="text-brand-muted text-sm leading-relaxed border-y border-brand-dark/10 py-6">
+                    Premium raw un-dyed boiled wool with exaggerated raglan shoulders. Incorporates internal harness webbings for hands-free off-shoulder carry during urban transit.
+                </p>
+
+                <!-- Size Selection -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between text-xs font-bold tracking-[0.2em] uppercase text-brand-dark">
+                        <span>Select Structural Fit</span>
+                        <a href="javascript:alert('Standard Japanese architectural sizing. Select your normal fit for exaggerated drape.')" class="text-brand-olive underline">Size Guide</a>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button onclick="selectSize(this)" class="size-btn py-3.5 rounded-2xl border-2 border-brand-dark bg-brand-dark text-brand-cream font-bold text-xs tracking-widest uppercase transition-all">S / 46</button>
+                        <button onclick="selectSize(this)" class="size-btn py-3.5 rounded-2xl border-2 border-brand-dark/20 bg-transparent text-brand-dark font-bold text-xs tracking-widest uppercase hover:border-brand-dark transition-all">M / 48</button>
+                        <button onclick="selectSize(this)" class="size-btn py-3.5 rounded-2xl border-2 border-brand-dark/20 bg-transparent text-brand-dark font-bold text-xs tracking-widest uppercase hover:border-brand-dark transition-all">L / 50</button>
+                        <button onclick="selectSize(this)" class="size-btn py-3.5 rounded-2xl border-2 border-brand-dark/20 bg-transparent text-brand-dark font-bold text-xs tracking-widest uppercase hover:border-brand-dark transition-all">XL / 52</button>
+                    </div>
+                </div>
+
+                <!-- Add to Cart CTA -->
+                <div class="pt-4">
+                    <button id="pdp-add-btn" onclick="addPdpToCart()" class="w-full py-5 bg-brand-dark text-brand-cream hover:bg-brand-sepia font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all flex items-center justify-center gap-3">
+                        <span class="material-symbols-outlined text-base">local_mall</span>
+                        Add To Atelier Bag
+                    </button>
+                </div>
+
+                <div class="space-y-3 pt-6 border-t border-brand-dark/10 text-xs text-brand-muted font-medium tracking-wide">
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-base text-brand-olive">local_shipping</span> Complimentary carbon-neutral express delivery</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-base text-brand-olive">history</span> Lifetime structural repair warranty included</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIP Access Unlock Modal (Glassmorphic Countdown) -->
+    <div id="vip-modal" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0 flex items-center justify-center p-6">
+        <!-- Backdrop -->
+        <div onclick="closeVIPModal()" class="absolute inset-0 bg-brand-dark/70 backdrop-blur-md pointer-events-auto"></div>
+        
+        <!-- Glassmorphic Modal Box -->
+        <div class="relative w-full max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 p-10 rounded-[2.5rem] shadow-2xl text-brand-cream text-center pointer-events-auto space-y-8">
+            <button onclick="closeVIPModal()" class="absolute top-6 right-6 p-2 rounded-full hover:bg-white/10 transition-colors text-white">
+                <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+            
+            <div class="w-16 h-16 rounded-full bg-brand-olive/20 border border-brand-olive/50 text-brand-olive flex items-center justify-center mx-auto shadow-lg">
+                <span class="material-symbols-outlined text-3xl">key</span>
+            </div>
+
+            <div class="space-y-2">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-olive uppercase">Private Syndicate</span>
+                <h3 class="text-2xl md:text-3xl font-bold tracking-tight uppercase text-white">VIP Capsule Unlock</h3>
+                <p class="text-brand-cream/70 text-sm leading-relaxed max-w-sm mx-auto pt-2">
+                    Enter your confidential cryptographic syndicate pass to unlock our highly limited experimental un-dyed Kevlar twill drop.
+                </p>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="grid grid-cols-4 gap-4 max-w-xs mx-auto text-center py-4 border-y border-white/10">
+                <div>
+                    <p id="vip-days" class="text-2xl font-bold text-white">02</p>
+                    <p class="text-[9px] tracking-widest uppercase text-brand-cream/60 mt-1">Days</p>
+                </div>
+                <div>
+                    <p id="vip-hours" class="text-2xl font-bold text-white">14</p>
+                    <p class="text-[9px] tracking-widest uppercase text-brand-cream/60 mt-1">Hours</p>
+                </div>
+                <div>
+                    <p id="vip-mins" class="text-2xl font-bold text-white">42</p>
+                    <p class="text-[9px] tracking-widest uppercase text-brand-cream/60 mt-1">Mins</p>
+                </div>
+                <div>
+                    <p id="vip-secs" class="text-2xl font-bold text-brand-olive">18</p>
+                    <p class="text-[9px] tracking-widest uppercase text-brand-cream/60 mt-1">Secs</p>
+                </div>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Decryption successful. Welcome to the Atelier Noir VIP Syndicate.'); closeVIPModal();" class="space-y-4">
+                <input type="text" placeholder="Enter Syndicate Pass..." required class="w-full bg-black/40 border border-white/20 px-6 py-4 rounded-full text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand-olive text-center tracking-widest font-mono">
+                <button type="submit" class="w-full py-4 bg-brand-cream text-brand-dark font-bold text-xs tracking-[0.2em] uppercase rounded-full hover:bg-white transition-all shadow-xl">
+                    Decrypt Drop Access
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Side Drawer Modal (Sliding Panel with Free Shipping Progress Bar) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0">
+        <!-- Backdrop -->
+        <div onclick="closeCartDrawer()" class="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm pointer-events-auto"></div>
+        
+        <!-- Drawer Panel -->
+        <div id="cart-panel" class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-brand-cream shadow-2xl pointer-events-auto translate-x-full transition-transform duration-500 flex flex-col justify-between border-l border-brand-dark/10">
+            <div class="p-8 flex flex-col flex-grow overflow-y-auto space-y-6">
+                <div class="flex items-center justify-between pb-4 border-b border-brand-dark/10">
+                    <span class="font-bold text-xl text-brand-dark uppercase tracking-tight">Atelier Bag</span>
+                    <button onclick="closeCartDrawer()" class="p-2 rounded-full hover:bg-brand-light transition-colors text-brand-dark">
+                        <span class="material-symbols-outlined text-2xl">close</span>
+                    </button>
+                </div>
+
+                <!-- Free Shipping Progress Bar -->
+                <div class="p-4 bg-white border border-brand-dark/10 rounded-2xl space-y-3 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <span id="shipping-icon" class="material-symbols-outlined text-brand-muted text-xl transition-colors">local_shipping</span>
+                        <span id="shipping-msg" class="text-xs font-bold text-brand-dark tracking-wide">Add $500 more for Free Worldwide Express</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                        <div id="shipping-progress" class="bg-brand-olive h-full w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Items Container -->
+                <div id="cart-items" class="flex-grow flex flex-col gap-4 py-2">
+                    <div class="flex flex-col items-center justify-center flex-grow text-center text-brand-muted space-y-3 my-auto">
+                        <span class="material-symbols-outlined text-5xl text-slate-300">inventory_2</span>
+                        <p class="text-sm font-medium">Your atelier bag is currently empty.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Footer -->
+            <div class="p-8 border-t border-brand-dark/10 bg-brand-light space-y-4">
+                <div class="flex justify-between items-center text-brand-dark font-bold text-lg uppercase tracking-tight">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <p class="text-[11px] text-brand-muted font-medium">Taxes and carbon-neutral transit calculated at checkout.</p>
+                <button onclick="alert('Thank you for shopping at Atelier Noir. This premium mockup checkout is complete!')" class="w-full py-5 bg-brand-dark hover:bg-brand-sepia text-brand-cream font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all flex items-center justify-center gap-3">
+                    Proceed To Decrypted Checkout
+                    <span class="material-symbols-outlined text-brand-olive text-base">lock</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Architectural Footer & Provenance Accords -->
+    <footer class="bg-brand-dark text-brand-cream pt-24 pb-12 px-6 border-t border-white/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-4xl mx-auto space-y-8">
+                <h2 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white uppercase leading-none">
+                    Syndicate <span class="text-brand-sepia font-light">Broadcast.</span>
+                </h2>
+                <p class="text-brand-cream/70 text-sm md:text-base max-w-xl mx-auto font-light leading-relaxed">
+                    Receive encrypted communications regarding impending zero-waste drops, deadstock inventory unlocks, and VIP syndicate access codes.
+                </p>
+                <form onsubmit="event.preventDefault(); alert('Syndicate broadcast transmission established.');" class="max-w-md mx-auto flex gap-2 p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                    <input type="email" placeholder="Transmit email address..." required class="bg-transparent px-6 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none flex-grow font-mono">
+                    <button type="submit" class="px-8 py-3 bg-brand-cream hover:bg-white text-brand-dark font-bold text-xs tracking-[0.2em] uppercase rounded-full transition-all shadow-xl">
+                        Transmit
+                    </button>
+                </form>
+            </div>
+
+            <div class="pt-16 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 text-xs text-white/50 font-medium">
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-lg text-white tracking-[0.2em] uppercase">Atelier <span class="font-light text-brand-sepia">Noir</span></span>
+                </div>
+                <div class="flex flex-wrap gap-8 tracking-[0.2em] uppercase">
+                    <a href="#" class="hover:text-white transition-colors">Decentralized Accords</a>
+                    <a href="#" class="hover:text-white transition-colors">Deadstock Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Syndicate Hubs</a>
+                    <a href="https://hermarktech.com/" target="_blank" class="hover:text-brand-olive transition-colors font-bold text-brand-olive">Engineered by Hermark Tech</a>
+                </div>
+                <p class="tracking-wider font-mono">© 2026 ATELIER NOIR. ZERO WASTE PROTOCOL.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

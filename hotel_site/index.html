@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Grand Serenade | Ultra-Luxury Secluded Eco-Resort">
+    <title>The Grand Serenade | Luxury Eco-Resort</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons & Favicon -->
+    <link rel="icon" href="https://api.iconify.design/material-symbols:hotel-class.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            forest: '#122620',
+                            travertine: '#d6c5b3',
+                            brass: '#c5a059',
+                            stone: '#f4ebe1',
+                            dark: '#0e1c18',
+                            muted: '#727c77'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-stone text-brand-forest font-sans antialiased selection:bg-brand-brass/30 selection:text-brand-forest">
+
+    <!-- Built by Hermark Tech Floating Badge -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://hermarktech.com/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-brand-forest text-brand-stone border border-brand-brass/40 shadow-[0_4px_20px_rgba(0,0,0,0.2)] rounded-full hover:scale-105 transition-all duration-300 group">
+            <span class="w-2 h-2 rounded-full bg-brand-brass animate-pulse"></span>
+            <span class="text-[10px] font-semibold tracking-widest uppercase group-hover:text-brand-brass transition-colors">Built by Hermark Tech</span>
+            <span class="material-symbols-outlined text-[14px] text-brand-brass/60 group-hover:translate-x-0.5 transition-transform">arrow_forward_ios</span>
+        </a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 z-40 w-full bg-brand-forest/80 backdrop-blur-md border-b border-brand-brass/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="text-xl md:text-2xl font-semibold tracking-[0.3em] text-white uppercase">The Grand <span class="text-brand-brass font-light">Serenade</span></a>
+            <nav class="hidden lg:flex items-center gap-10 text-xs font-semibold tracking-[0.25em] uppercase text-white/80">
+                <a href="#suites" class="hover:text-brand-brass transition-colors">Luxury Suites</a>
+                <a href="#amenities" class="hover:text-brand-brass transition-colors">Interactive Map</a>
+                <a href="#dining" class="hover:text-brand-brass transition-colors">Gastronomy</a>
+                <a href="#wellness" class="hover:text-brand-brass transition-colors">Wellness Sanctuary</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="openBookingModal()" class="px-8 py-3.5 rounded-full bg-brand-brass hover:bg-brand-brass/80 text-brand-forest text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-lg shadow-black/10">
+                    Reserve
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Ambient Drone Video Loop & Floating Glassmorphic Booking Bar -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-forest">
+        <!-- Ambient Background Video Loop -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none z-0">
+            <source src="images/Drone_shot_jungle_coastline_villa.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-forest/60 via-transparent to-brand-forest z-0 pointer-events-none"></div>
+
+        <!-- Hero Typography -->
+        <div class="relative z-10 text-center max-w-5xl mx-auto px-6 space-y-6 transform -translate-y-12">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-brass/40 bg-brand-forest/60 backdrop-blur-md text-white">
+                <span class="w-2 h-2 rounded-full bg-brand-brass animate-pulse"></span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-brand-brass font-bold">Ultra-Luxury Secluded Eco-Resort</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-light text-white tracking-tight leading-none uppercase">
+                An Absolute <br>
+                <span class="font-bold text-brand-travertine">Sanctuary.</span>
+            </h1>
+            <p class="text-base md:text-xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed">
+                Immerse yourself in pure architectural transcendence. Nestled amidst pristine untouched ancient biomes with perfect zero-carbon luxury hospitality.
+            </p>
+        </div>
+
+        <!-- Floating Glassmorphic Booking Bar -->
+        <div class="absolute bottom-12 inset-x-6 max-w-6xl mx-auto z-20">
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-6 rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.5)] grid grid-cols-1 md:grid-cols-4 gap-4 items-center text-white">
+                <!-- Check In -->
+                <div class="bg-black/20 p-4 rounded-3xl border border-white/10">
+                    <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-1">Check-In</p>
+                    <input type="date" id="bar-checkin" value="2026-07-15" class="bg-transparent font-medium text-sm w-full focus:outline-none focus:text-brand-brass cursor-pointer">
+                </div>
+                <!-- Check Out -->
+                <div class="bg-black/20 p-4 rounded-3xl border border-white/10">
+                    <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-1">Check-Out</p>
+                    <input type="date" id="bar-checkout" value="2026-07-22" class="bg-transparent font-medium text-sm w-full focus:outline-none focus:text-brand-brass cursor-pointer">
+                </div>
+                <!-- Guests -->
+                <div class="bg-black/20 p-4 rounded-3xl border border-white/10">
+                    <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-1">Guests & Villa</p>
+                    <select id="bar-guests" class="bg-transparent font-medium text-sm w-full focus:outline-none focus:text-brand-brass cursor-pointer">
+                        <option value="2" class="bg-brand-forest text-white">2 Adults | Ocean Pool Villa</option>
+                        <option value="4" class="bg-brand-forest text-white">4 Adults | Emerald Residence</option>
+                        <option value="6" class="bg-brand-forest text-white">6 Adults | The Serenade Manor</option>
+                    </select>
+                </div>
+                <!-- CTA -->
+                <button onclick="openBookingModal()" class="w-full h-full min-h-[64px] bg-brand-brass hover:bg-brand-brass/80 text-brand-forest font-bold text-xs tracking-[0.2em] uppercase rounded-3xl transition-all shadow-xl flex items-center justify-center gap-2">
+                    Check Availability
+                    <span class="material-symbols-outlined text-base">east</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Showcase: Horizontal Draggable Card Carousel with Expanding Detail Panels -->
+    <section id="suites" class="py-32 max-w-7xl mx-auto px-6 overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Architectural Suites</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-forest mt-3 tracking-tight uppercase">Private Eco-Villas</h2>
+            </div>
+            <p class="text-brand-muted max-w-md text-sm leading-relaxed">
+                Each villa is custom-engineered from local travertine stone and sustainable rich timbers, featuring cantilevered private infinity pools.
+            </p>
+        </div>
+
+        <div id="room-carousel" class="flex gap-8 overflow-x-auto pb-12 snap-x scroll-smooth hide-scrollbar cursor-grab active:cursor-grabbing">
+            <!-- Room Card 1 -->
+            <div class="min-w-[340px] md:min-w-[440px] bg-white border border-brand-travertine/50 rounded-[2.5rem] overflow-hidden shadow-xl snap-start group select-none flex flex-col">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="images/ocean_pool_villa.avif" alt="Ocean Pool Villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-6 right-6 bg-brand-forest/80 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40">
+                        $1,850 / Night
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">2 Guests | 240 sq.m</p>
+                        <h3 class="font-bold text-2xl text-brand-forest group-hover:text-brand-brass transition-colors">Ocean Pool Villa</h3>
+                        <p class="text-sm text-brand-muted mt-4 leading-relaxed">
+                            Panoramic direct ocean facing suite featuring an expansive cantilevered glass infinity pool, sunken fire pit, and private direct shoreline access.
+                        </p>
+                        <!-- Expanding Panel -->
+                        <div id="room-panel-1" class="mt-6 pt-6 border-t border-brand-travertine/40 hidden space-y-3 text-xs font-medium text-brand-muted">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">local_bar</span> Premium complimentary minibar & wine cellarette</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">support_agent</span> Dedicated 24/7 personal private butler service</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">waves</span> Complimentary private yacht marina docking</div>
+                        </div>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-brand-travertine/50 flex items-center justify-between">
+                        <button onclick="toggleRoomPanel(1)" class="text-xs font-bold tracking-[0.2em] uppercase text-brand-forest hover:text-brand-brass transition-colors flex items-center gap-1">
+                            <span id="room-btn-text-1">Inspect Features</span> <span id="room-icon-1" class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                        <button onclick="openBookingModalWithSuite('Ocean Pool Villa', 1850)" class="px-6 py-3 bg-brand-forest text-white rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-brass hover:text-brand-forest transition-all">
+                            Reserve Suite
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Card 2 -->
+            <div class="min-w-[340px] md:min-w-[440px] bg-white border border-brand-travertine/50 rounded-[2.5rem] overflow-hidden shadow-xl snap-start group select-none flex flex-col">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="images/emerald_residence.avif" alt="Emerald Jungle Residence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-6 right-6 bg-brand-forest/80 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40">
+                        $2,600 / Night
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">4 Guests | 380 sq.m</p>
+                        <h3 class="font-bold text-2xl text-brand-forest group-hover:text-brand-brass transition-colors">Emerald Jungle Residence</h3>
+                        <p class="text-sm text-brand-muted mt-4 leading-relaxed">
+                            A stunning two-story treehouse sanctuary elevated among ancient emerald canopies. Includes a suspended glass observation lounge and dual private pools.
+                        </p>
+                        <!-- Expanding Panel -->
+                        <div id="room-panel-2" class="mt-6 pt-6 border-t border-brand-travertine/40 hidden space-y-3 text-xs font-medium text-brand-muted">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">sailing</span> 4 hours complimentary private charter sailing</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">hot_tub</span> Travertine deep soaking stone bath tubs</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">support_agent</span> Dedicated 24/7 personal private butler service</div>
+                        </div>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-brand-travertine/50 flex items-center justify-between">
+                        <button onclick="toggleRoomPanel(2)" class="text-xs font-bold tracking-[0.2em] uppercase text-brand-forest hover:text-brand-brass transition-colors flex items-center gap-1">
+                            <span id="room-btn-text-2">Inspect Features</span> <span id="room-icon-2" class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                        <button onclick="openBookingModalWithSuite('Emerald Jungle Residence', 2600)" class="px-6 py-3 bg-brand-forest text-white rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-brass hover:text-brand-forest transition-all">
+                            Reserve Suite
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Card 3 -->
+            <div class="min-w-[340px] md:min-w-[440px] bg-white border border-brand-travertine/50 rounded-[2.5rem] overflow-hidden shadow-xl snap-start group select-none flex flex-col">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="images/serenade.avif" alt="The Serenade Manor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-6 right-6 bg-brand-forest/80 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40">
+                        $4,800 / Night
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <p class="text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">6 Guests | 720 sq.m</p>
+                        <h3 class="font-bold text-2xl text-brand-forest group-hover:text-brand-brass transition-colors">The Serenade Manor</h3>
+                        <p class="text-sm text-brand-muted mt-4 leading-relaxed">
+                            Our premier crown jewel architectural compound. Features an Olympic-length private lap pool, subterranean private cinema, and personal helipad access.
+                        </p>
+                        <!-- Expanding Panel -->
+                        <div id="room-panel-3" class="mt-6 pt-6 border-t border-brand-travertine/40 hidden space-y-3 text-xs font-medium text-brand-muted">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">flight_takeoff</span> Direct private helipad landing authorization</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">restaurant_menu</span> Dedicated personal Michelin-trained private chef</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-brass text-base">videocam</span> Subterranean private acoustic cinema studio</div>
+                        </div>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-brand-travertine/50 flex items-center justify-between">
+                        <button onclick="toggleRoomPanel(3)" class="text-xs font-bold tracking-[0.2em] uppercase text-brand-forest hover:text-brand-brass transition-colors flex items-center gap-1">
+                            <span id="room-btn-text-3">Inspect Features</span> <span id="room-icon-3" class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                        <button onclick="openBookingModalWithSuite('The Serenade Manor', 4800)" class="px-6 py-3 bg-brand-forest text-white rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-brass hover:text-brand-forest transition-all">
+                            Reserve Suite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities & Experiences: Interactive Resort Map with Glowing Pins -->
+    <section id="amenities" class="py-32 bg-brand-forest text-white border-y border-brand-brass/20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Exploration Studio</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 tracking-tight uppercase">Interactive Resort Map</h2>
+                <p class="text-white/70 text-sm mt-4 leading-relaxed">
+                    Hover over or click the glowing navigational coordinates to inspect our private sanctuary facilities, thermal spa lagoons, and private yacht anchorages.
+                </p>
+            </div>
+
+            <!-- Map Container -->
+            <div class="relative max-w-6xl mx-auto rounded-[3rem] overflow-hidden bg-brand-dark shadow-2xl border border-brand-brass/30 aspect-[16/9] min-h-[500px]">
+                <img src="images/resort_satellite_map.png" alt="Resort Satellite View" class="w-full h-full object-cover opacity-70">
+                <div class="absolute inset-0 bg-brand-forest/40 pointer-events-none"></div>
+
+                <!-- Pin 1: Spa Lagoon -->
+                <div class="absolute top-[35%] left-[25%] z-20 group">
+                    <button onclick="showMapDetail('spa')" class="relative w-10 h-10 rounded-full bg-brand-brass text-brand-forest flex items-center justify-center shadow-2xl hover:scale-125 transition-transform duration-300 border-2 border-white">
+                        <span class="absolute inset-0 rounded-full bg-brand-brass animate-ping opacity-80"></span>
+                        <span class="relative material-symbols-outlined text-base">spa</span>
+                    </button>
+                </div>
+
+                <!-- Pin 2: Horizon Pavilion (Dining) -->
+                <div class="absolute top-[50%] left-[60%] z-20 group">
+                    <button onclick="showMapDetail('dining')" class="relative w-10 h-10 rounded-full bg-brand-brass text-brand-forest flex items-center justify-center shadow-2xl hover:scale-125 transition-transform duration-300 border-2 border-white">
+                        <span class="absolute inset-0 rounded-full bg-brand-brass animate-ping opacity-80"></span>
+                        <span class="relative material-symbols-outlined text-base">restaurant</span>
+                    </button>
+                </div>
+
+                <!-- Pin 3: Private Yacht Anchorage -->
+                <div class="absolute top-[70%] left-[40%] z-20 group">
+                    <button onclick="showMapDetail('marina')" class="relative w-10 h-10 rounded-full bg-brand-brass text-brand-forest flex items-center justify-center shadow-2xl hover:scale-125 transition-transform duration-300 border-2 border-white">
+                        <span class="absolute inset-0 rounded-full bg-brand-brass animate-ping opacity-80"></span>
+                        <span class="relative material-symbols-outlined text-base">sailing</span>
+                    </button>
+                </div>
+
+                <!-- Floating Interactive Detail Overlay Box -->
+                <div id="map-detail-card" class="absolute bottom-8 right-8 w-full max-w-sm bg-brand-dark/95 backdrop-blur-md p-8 rounded-3xl border border-brand-brass/40 shadow-2xl text-white transition-all duration-300 z-30">
+                    <div class="flex items-center gap-3 text-brand-brass mb-3">
+                        <span id="map-detail-icon" class="material-symbols-outlined text-2xl">spa</span>
+                        <span id="map-detail-tag" class="text-xs font-bold tracking-[0.25em] uppercase">Sanctuary Spa</span>
+                    </div>
+                    <h4 id="map-detail-title" class="text-xl font-bold tracking-tight uppercase">Thermal Travertine Lagoons</h4>
+                    <p id="map-detail-desc" class="text-white/70 text-xs mt-3 leading-relaxed">
+                        Subterranean mineral warm water lagoons fed by ancient thermal vents. Offers complete sensory floatation and custom botanical clay rituals.
+                    </p>
+                    <button onclick="openBookingModal()" class="mt-6 w-full py-3 bg-brand-brass text-brand-forest rounded-2xl font-bold text-xs tracking-[0.2em] uppercase hover:bg-white transition-all">
+                        Request Access
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining & Gastronomy: Tabbed Gourmet Menu & Book-A-Table Widget -->
+    <section id="dining" class="py-32 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div class="lg:col-span-7 space-y-12">
+                <div>
+                    <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Culinary Excellence</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-brand-forest mt-3 tracking-tight uppercase">The Horizon Pavilion</h2>
+                    <p class="text-brand-muted text-sm mt-4 leading-relaxed max-w-lg">
+                        Helmed by 3-star Michelin executive chef Laurent Devaux. Every ingredient is sustainably harvested daily from our deep-water reefs and organic permaculture gardens.
+                    </p>
+                </div>
+
+                <!-- Beautiful Michelin Gastronomy Visual Display -->
+                <div class="w-full aspect-[16/9] rounded-[2.5rem] overflow-hidden shadow-2xl border border-brand-travertine/60 relative group">
+                    <img src="images/michelin_gastronomy.png" alt="Michelin Star Dining Gastronomy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-forest/80 via-transparent to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-[10px] font-bold tracking-[0.3em] text-brand-brass uppercase">Artisanal Plating</span>
+                            <h4 class="text-lg font-bold tracking-tight uppercase mt-1">3-Star Michelin Gastronomy</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Buttons -->
+                <div class="flex gap-4 border-b border-brand-travertine/60 pb-4 overflow-x-auto hide-scrollbar">
+                    <button onclick="switchMenuTab('dinner')" id="btn-tab-dinner" class="menu-tab-btn pb-2 text-xs font-bold tracking-[0.25em] uppercase border-b-2 border-brand-forest text-brand-forest transition-colors shrink-0">Dinner Tasting</button>
+                    <button onclick="switchMenuTab('lunch')" id="btn-tab-lunch" class="menu-tab-btn pb-2 text-xs font-bold tracking-[0.25em] uppercase border-b-2 border-transparent text-brand-muted hover:text-brand-forest transition-colors shrink-0">Bistro Day Menu</button>
+                    <button onclick="switchMenuTab('cellar')" id="btn-tab-cellar" class="menu-tab-btn pb-2 text-xs font-bold tracking-[0.25em] uppercase border-b-2 border-transparent text-brand-muted hover:text-brand-forest transition-colors shrink-0">Reserve Wine Cellar</button>
+                </div>
+
+                <!-- Tab Content: Dinner -->
+                <div id="tab-dinner" class="menu-tab-content space-y-8">
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Smoked Diver Scallops</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Kombu seaweed infusion, pickled sea dew, white sturgeon reserve caviar.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$42</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Line-Caught Deep Blue Chilean Bass</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Charred baby bamboo, fermented un-pasteurized white miso, chanterelle essence.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$68</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">A5 Wagyu Miyazaki Sirloin</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Truffle butter marrow crisp, aged 30-year black garlic reduction, baby root wildings.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$120</span>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Lunch (Hidden) -->
+                <div id="tab-lunch" class="menu-tab-content space-y-8 hidden">
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Lobster Garden Ensalada</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Poached main tail, organic palm hearts, wild lime avocado pure infusion.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$38</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Seared Albacore Tuna Sashimi</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Ponzu yuzu dressing, crispy ginger lotus roots, toasted macadamia dust.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$45</span>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Cellar (Hidden) -->
+                <div id="tab-cellar" class="menu-tab-content space-y-8 hidden">
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Dom Pérignon Reserve P2 2004</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Champagne, France. Perfectly stored in our subterranean temperature-controlled cellars.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$890</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4 pb-6 border-b border-brand-travertine/40">
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-forest uppercase">Château Margaux Premier Grand Cru 2015</h4>
+                            <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-md">Bordeaux, France. Exceptional vintage with profound balance and lengthy finish.</p>
+                        </div>
+                        <span class="font-bold text-lg text-brand-brass">$1,450</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book-a-Table Widget -->
+            <div class="lg:col-span-5 bg-brand-forest text-white p-10 md:p-12 rounded-[3rem] shadow-2xl border border-brand-brass/20 space-y-8 lg:sticky lg:top-32">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Gastronomy Access</span>
+                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight uppercase">Reserve A Pavilion Table</h3>
+                    <p class="text-white/70 text-xs leading-relaxed pt-1">Priority bookings are reserved for sitting villa residents and private syndicate members.</p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('Table reservation request submitted to Executive Maitre d\'.');" class="space-y-6">
+                    <div>
+                        <label class="block text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">Select Date</label>
+                        <input type="date" required value="2026-07-16" class="w-full bg-black/40 border border-white/20 p-4 rounded-2xl text-sm text-white focus:outline-none focus:border-brand-brass">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">Dining Time</label>
+                        <select required class="w-full bg-black/40 border border-white/20 p-4 rounded-2xl text-sm text-white focus:outline-none focus:border-brand-brass cursor-pointer">
+                            <option value="19:00" class="bg-brand-forest">19:00 - Sunset Horizon Sitting</option>
+                            <option value="21:00" class="bg-brand-forest">21:00 - Starlight Tasting Sitting</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] tracking-[0.2em] text-brand-brass uppercase font-bold mb-2">Guest Sitting</label>
+                        <input type="number" min="1" max="10" value="2" required class="w-full bg-black/40 border border-white/20 p-4 rounded-2xl text-sm text-white focus:outline-none focus:border-brand-brass">
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-brand-brass hover:bg-brand-brass/80 text-brand-forest font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all">
+                        Confirm Table Reservation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness & Spa Showcase: Interactive Before/After Spa Relaxation Slider -->
+    <section id="wellness" class="py-32 bg-white border-y border-brand-travertine/60 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16">
+            <!-- Slider -->
+            <div class="w-full lg:w-1/2 flex items-center justify-center">
+                <div class="relative w-full max-w-[550px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-brand-travertine select-none">
+                    <!-- After Image (Relaxed Spa State) -->
+                    <img src="images/spa_after.png" alt="Spa Tranquility State" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                    <div class="absolute bottom-6 right-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40 z-10">
+                        Post-Treatment: Transcendent
+                    </div>
+
+                    <!-- Before Image (Pre-Spa State) -->
+                    <div id="spa-slider-before" class="absolute inset-0 pointer-events-none z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                        <img src="images/spa_before.png" alt="Pre Spa State" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                        <div class="absolute bottom-6 left-6 bg-brand-forest/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-brand-brass/40">
+                            Pre-Treatment: Arrive
+                        </div>
+                    </div>
+
+                    <!-- Slider Handle -->
+                    <div id="spa-slider-handle" class="absolute top-0 bottom-0 left-1/2 w-1.5 bg-brand-brass flex items-center justify-center z-20 pointer-events-none" style="transform: translateX(-50%);">
+                        <div class="w-12 h-12 rounded-full bg-brand-forest border-2 border-brand-brass text-brand-brass flex items-center justify-center shadow-2xl pointer-events-auto">
+                            <span class="material-symbols-outlined text-sm">swap_horiz</span>
+                        </div>
+                    </div>
+
+                    <input type="range" id="spa-slider-input" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 space-y-8 text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-forest text-brand-stone">
+                    <span class="material-symbols-outlined text-sm text-brand-brass">self_improvement</span>
+                    <span class="text-[10px] uppercase font-bold tracking-[0.25em]">Holistic Rebirth</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-brand-forest uppercase">
+                    The Solstice <br>
+                    <span class="font-light text-brand-brass">Sanctuary.</span>
+                </h2>
+                <p class="text-base md:text-lg text-brand-muted font-light leading-relaxed">
+                    Drag the interactive slider to experience the visual manifestation of our 180-minute signature rebirth treatment. We incorporate thermal magnesium flotes, organic local travertine clay body envelopes, and ancient sonic crystal therapy.
+                </p>
+                <div class="pt-4">
+                    <button onclick="openBookingModal()" class="px-10 py-5 bg-brand-forest text-white hover:bg-brand-brass hover:text-brand-forest font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all flex items-center gap-3">
+                        Reserve Sanctuary Day Pass
+                        <span class="material-symbols-outlined text-base">east</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Awards: Elegant Single-Quote Switcher -->
+    <section class="py-32 max-w-5xl mx-auto px-6 text-center overflow-hidden">
+        <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Global Acclaim</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-forest mt-3 mb-16 tracking-tight uppercase">What The Experts Say</h2>
+
+        <!-- Single Quote Box -->
+        <div class="bg-white border border-brand-travertine/60 rounded-[3rem] p-12 md:p-16 shadow-2xl relative min-h-[380px] flex flex-col justify-between items-center text-center max-w-4xl mx-auto">
+            <span class="material-symbols-outlined text-brand-brass text-6xl opacity-30 absolute top-8 left-12">format_quote</span>
+
+            <!-- Quote 1 -->
+            <div id="quote-1" class="quote-content space-y-8 my-auto w-full transition-all duration-500">
+                <p class="text-xl md:text-3xl font-light text-brand-forest italic leading-relaxed max-w-3xl mx-auto">
+                    "The Grand Serenade establishes an entirely new paradigm for ultra-luxury eco-resorts. The absolute architectural isolation and magnificent Michelin gastronomy left us thoroughly breathless."
+                </p>
+                <div>
+                    <h4 class="font-bold text-base text-brand-forest uppercase tracking-widest">Condé Nast Traveller</h4>
+                    <p class="text-xs text-brand-brass uppercase tracking-[0.2em] mt-1">Gold List 2026 Winner</p>
+                </div>
+            </div>
+
+            <!-- Quote 2 (Hidden) -->
+            <div id="quote-2" class="quote-content space-y-8 my-auto w-full transition-all duration-500 hidden">
+                <p class="text-xl md:text-3xl font-light text-brand-forest italic leading-relaxed max-w-3xl mx-auto">
+                    "Zero-carbon luxury executed with absolute flawless perfection. The Ocean Pool Villa features the most breathtaking cantilevered pool architecture we have ever inspected in the southern hemisphere."
+                </p>
+                <div>
+                    <h4 class="font-bold text-base text-brand-forest uppercase tracking-widest">Elite Traveler Magazine</h4>
+                    <p class="text-xs text-brand-brass uppercase tracking-[0.2em] mt-1">World's Top 50 Eco-Suites</p>
+                </div>
+            </div>
+
+            <!-- Quote 3 (Hidden) -->
+            <div id="quote-3" class="quote-content space-y-8 my-auto w-full transition-all duration-500 hidden">
+                <p class="text-xl md:text-3xl font-light text-brand-forest italic leading-relaxed max-w-3xl mx-auto">
+                    "The personal butler infrastructure and private helipad authorization makes this the absolute ultimate secluded sanctuary for high-net-worth enterprise leaders seeking complete cognitive decompression."
+                </p>
+                <div>
+                    <h4 class="font-bold text-base text-brand-forest uppercase tracking-widest">Forbes Travel Guide</h4>
+                    <p class="text-xs text-brand-brass uppercase tracking-[0.2em] mt-1">Five-Star Inspection Rating</p>
+                </div>
+            </div>
+
+            <!-- Switcher Dots -->
+            <div class="flex gap-3 pt-8 mt-8 border-t border-brand-travertine/40 w-full justify-center">
+                <button onclick="switchQuote(1)" id="dot-quote-1" class="w-12 h-1.5 rounded-full bg-brand-forest transition-all"></button>
+                <button onclick="switchQuote(2)" id="dot-quote-2" class="w-12 h-1.5 rounded-full bg-brand-travertine hover:bg-brand-forest transition-all"></button>
+                <button onclick="switchQuote(3)" id="dot-quote-3" class="w-12 h-1.5 rounded-full bg-brand-travertine hover:bg-brand-forest transition-all"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Step Interactive Booking Modal with Price Calculator -->
+    <div id="booking-modal" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0 flex items-center justify-center p-6 bg-brand-forest/90 backdrop-blur-xl">
+        <div class="relative w-full max-w-4xl bg-brand-stone text-brand-forest rounded-[3rem] shadow-2xl p-8 md:p-14 pointer-events-auto border border-brand-brass/40 flex flex-col justify-between max-h-[90vh] overflow-y-auto">
+            <button onclick="closeBookingModal()" class="absolute top-8 right-8 p-3 rounded-full hover:bg-white transition-colors text-brand-forest">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+
+            <!-- Progress Header -->
+            <div class="space-y-3 pb-8 border-b border-brand-travertine/60 text-left">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-brass uppercase">Secure Reservation Studio</span>
+                <h3 class="text-2xl md:text-4xl font-bold tracking-tight uppercase text-brand-forest">Confirm Your Sanctuary</h3>
+                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-4">
+                    <div id="booking-progress" class="bg-brand-brass h-full w-1/2 transition-all duration-500"></div>
+                </div>
+            </div>
+
+            <!-- Step 1: Configurator -->
+            <div id="booking-step-1" class="py-8 space-y-8 text-left flex-grow">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Check-In / Out -->
+                    <div class="bg-white p-6 rounded-2xl border border-brand-travertine/60 space-y-4">
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-brand-forest">1. Sanctuary Dates</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] uppercase font-bold text-brand-muted block mb-1">Check-In</label>
+                                <input type="date" id="modal-checkin" value="2026-07-15" class="w-full bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs font-bold" onchange="calculatePrice()">
+                            </div>
+                            <div>
+                                <label class="text-[10px] uppercase font-bold text-brand-muted block mb-1">Check-Out</label>
+                                <input type="date" id="modal-checkout" value="2026-07-22" class="w-full bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs font-bold" onchange="calculatePrice()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suite Choice -->
+                    <div class="bg-white p-6 rounded-2xl border border-brand-travertine/60 space-y-4">
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-brand-forest">2. Select Villa Suite</h4>
+                        <select id="modal-suite" class="w-full bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs font-bold cursor-pointer" onchange="calculatePrice()">
+                            <option value="1850">Ocean Pool Villa ($1,850 / night)</option>
+                            <option value="2600">Emerald Jungle Residence ($2,600 / night)</option>
+                            <option value="4800">The Serenade Manor ($4,800 / night)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Live Price Calculator Summary Box -->
+                <div class="bg-brand-forest text-white p-8 rounded-3xl border border-brand-brass/40 space-y-4">
+                    <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-brass">Real-Time Quotation Calculator</h4>
+                    <div class="flex justify-between items-center text-sm border-b border-white/10 pb-3">
+                        <span id="calc-suite-name">Ocean Pool Villa (7 Nights)</span>
+                        <span id="calc-base-total">$12,950.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm border-b border-white/10 pb-3">
+                        <span>Sanctuary Conservation Tax (10%)</span>
+                        <span id="calc-tax">$1,295.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xl font-bold pt-2 text-brand-brass">
+                        <span>Total Sanctuary Estimate</span>
+                        <span id="calc-grand-total">$14,245.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Final Confirmation -->
+            <div id="booking-step-2" class="py-12 space-y-8 text-center flex-grow hidden">
+                <div class="w-20 h-20 bg-brand-forest text-brand-brass rounded-full flex items-center justify-center mx-auto border-2 border-brand-brass shadow-2xl">
+                    <span class="material-symbols-outlined text-4xl">how_to_reg</span>
+                </div>
+                <h3 class="text-3xl md:text-5xl font-bold tracking-tight uppercase text-brand-forest">Reservation Initialized</h3>
+                <p class="text-brand-muted text-base leading-relaxed max-w-lg mx-auto">
+                    Your exclusive sanctuary dates have been fully held in our secure booking matrix. A dedicated private butler will contact your personal syndicate address within 2 hours to confirm helicopter transit credentials.
+                </p>
+                <button onclick="closeBookingModal()" class="px-10 py-5 bg-brand-forest text-white hover:bg-brand-brass hover:text-brand-forest font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all">
+                    Return To Sanctuary Home
+                </button>
+            </div>
+
+            <!-- Modal Footer Navigation -->
+            <div id="modal-footer-nav" class="pt-8 border-t border-brand-travertine/60 flex items-center justify-between">
+                <button onclick="closeBookingModal()" class="text-xs font-bold tracking-[0.2em] uppercase text-brand-muted hover:text-brand-forest transition-colors">
+                    Cancel Reservation
+                </button>
+                <button onclick="confirmBookingStep()" class="px-10 py-5 bg-brand-forest text-white hover:bg-brand-brass hover:text-brand-forest font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-xl transition-all flex items-center gap-3">
+                    Confirm Sanctuary Dates
+                    <span class="material-symbols-outlined text-base">lock</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-forest text-white pt-24 pb-12 px-6 border-t border-brand-brass/20 overflow-hidden">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+                <div class="space-y-6 md:col-span-2">
+                    <a href="#" class="text-2xl md:text-3xl font-semibold tracking-[0.3em] text-white uppercase">The Grand <span class="text-brand-brass font-light">Serenade</span></a>
+                    <p class="text-white/70 text-xs leading-relaxed max-w-sm font-light">
+                        Ultra-luxury secluded eco-resort operating with absolute zero-carbon hospitality. Offering private cantilevered pool villas, Michelin gastronomy, and complete architectural isolation.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-brass">Sanctuary Navigational Coordinates</h4>
+                    <ul class="space-y-3 text-xs tracking-widest uppercase font-medium text-white/80">
+                        <li><a href="#suites" class="hover:text-brand-brass transition-colors">Private Eco-Villas</a></li>
+                        <li><a href="#amenities" class="hover:text-brand-brass transition-colors">Interactive Resort Map</a></li>
+                        <li><a href="#dining" class="hover:text-brand-brass transition-colors">Horizon Pavilion</a></li>
+                        <li><a href="#wellness" class="hover:text-brand-brass transition-colors">Solstice Spa Sanctuary</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold tracking-[0.25em] uppercase text-brand-brass">Private Despatch</h4>
+                    <p class="text-xs text-white/70 leading-relaxed font-light">Register to receive private invitations to unannounced seasonal residence allocations.</p>
+                    <form onsubmit="event.preventDefault(); alert('Private despatch registration confirmed.');" class="flex gap-2 p-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                        <input type="email" placeholder="Syndicate Email..." required class="bg-transparent px-4 py-2 text-xs text-white placeholder:text-white/50 focus:outline-none flex-grow">
+                        <button type="submit" class="px-5 py-2 bg-brand-brass hover:bg-brand-brass/80 text-brand-forest font-bold text-[10px] tracking-widest uppercase rounded-full transition-all">
+                            Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-xs text-white/50 font-medium">
+                <div class="flex flex-wrap gap-8 tracking-widest uppercase">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Infrastructure</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Sanctuary</a>
+                    <a href="https://hermarktech.com/" target="_blank" class="hover:text-brand-brass transition-colors font-bold text-brand-brass">Engineered by Hermark Tech</a>
+                </div>
+                <p class="tracking-widest uppercase">© 2026 THE GRAND SERENADE. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

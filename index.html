@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hermark Tech Solutions | Premium Industry Mockup Showcase Portal">
+    <title>Hermark Tech Solutions | Premium Mockup Showcase</title>
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#07090e',
+                            card: '#0d121c',
+                            electric: '#2563eb',
+                            glow: '#3b82f6',
+                            neon: '#60a5fa',
+                            muted: '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Keyframes & Utility Styles */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #07090e; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    </style>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased selection:bg-brand-electric selection:text-white bg-grid-pattern min-h-screen flex flex-col justify-between">
+
+    <!-- Glowing Background Orbs -->
+    <div class="fixed top-[-200px] left-[-200px] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 w-full bg-brand-dark/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="https://hermarktech.com/" target="_blank" class="flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 p-0.5 shadow-[0_0_25px_rgba(37,99,235,0.5)] group-hover:shadow-[0_0_35px_rgba(59,130,246,0.8)] transition-all">
+                    <div class="w-full h-full bg-brand-dark rounded-[14px] flex items-center justify-center">
+                        <span class="material-symbols-outlined text-brand-neon text-2xl group-hover:rotate-12 transition-transform">code_blocks</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white block">Hermark Tech <span class="text-brand-neon font-light">Solutions</span></span>
+                    <span class="text-[10px] uppercase font-semibold tracking-widest text-brand-muted block">Enterprise Web Engineering</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <a href="#mockups" class="hidden sm:inline-flex text-xs font-bold tracking-[0.2em] uppercase text-white/80 hover:text-brand-neon transition-colors">
+                    Explore Prototypes
+                </a>
+                <a href="https://hermarktech.com/" target="_blank" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] flex items-center gap-2">
+                    Official Portfolio
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 flex-grow max-w-7xl mx-auto px-6 py-20 w-full space-y-32">
+        
+        <!-- Hero Title -->
+        <section class="text-center max-w-4xl mx-auto space-y-8 animate-float">
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-md text-white shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-brand-neon animate-pulse"></span>
+                <span class="text-[11px] tracking-[0.25em] uppercase text-brand-neon font-bold">Premium Industry Demonstration Portal</span>
+            </div>
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight leading-none text-white">
+                Next-Generation <br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Interactive Mockups.</span>
+            </h1>
+            <p class="text-base md:text-xl text-brand-muted font-body font-light leading-relaxed max-w-2xl mx-auto">
+                Explore our masterfully engineered client-side prototypes demonstrating premium UI/UX architectures, tailored color spaces, custom high-fidelity media assets, and rich interaction logic.
+            </p>
+            <div class="pt-4">
+                <a href="#mockups" class="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-brand-dark hover:bg-brand-neon hover:text-brand-dark text-xs font-bold tracking-[0.2em] uppercase transition-all shadow-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                    Inspect 4 Industry Prototypes
+                    <span class="material-symbols-outlined text-base">arrow_downward</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 4 Mockup Cards Showcase Grid -->
+        <section id="mockups" class="space-y-12 scroll-mt-28">
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-neon uppercase">Prototypes Directory</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white">Custom Industry Vertical Mockups</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- 1. Beauty Store Site -->
+                <div class="group relative bg-brand-card border border-white/10 hover:border-pink-500/50 rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(236,72,153,0.2)] flex flex-col justify-between">
+                    <div class="aspect-[16/10] bg-slate-900 overflow-hidden relative">
+                        <img src="beauty_store_site/images/hero_beauty_ambient.png" alt="Aura Botanica Beauty Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-6 left-6 bg-pink-500/20 border border-pink-500/50 backdrop-blur-md text-pink-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                            Luxury Cosmetics
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-6 flex-grow flex flex-col justify-between relative z-10">
+                        <div class="space-y-3">
+                            <h3 class="text-3xl font-bold tracking-tight text-white group-hover:text-pink-400 transition-colors">Aura Botanica | Beauty Store</h3>
+                            <p class="text-sm text-brand-muted font-body leading-relaxed">
+                                Advanced luxury skincare architecture featuring an interactive Clinical Consultation Routine Finder, dynamic Science Matrix, and complete shopping cart state management.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs font-mono tracking-wider text-brand-muted">HTML / CSS / JS</span>
+                            <a href="beauty_store_site/index.html" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-lg transition-all flex items-center gap-2">
+                                Launch Site <span class="material-symbols-outlined text-sm">east</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Clothing Store Site -->
+                <div class="group relative bg-brand-card border border-white/10 hover:border-amber-500/50 rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(245,158,11,0.2)] flex flex-col justify-between">
+                    <div class="aspect-[16/10] bg-slate-900 overflow-hidden relative">
+                        <img src="clothing_store_site/images/look_1.avif" alt="Veritas Archive Clothing Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-6 left-6 bg-amber-500/20 border border-amber-500/50 backdrop-blur-md text-amber-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                            Premium Apparel
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-6 flex-grow flex flex-col justify-between relative z-10">
+                        <div class="space-y-3">
+                            <h3 class="text-3xl font-bold tracking-tight text-white group-hover:text-amber-400 transition-colors">Vélour Éclair | Clothing Store</h3>
+                            <p class="text-sm text-brand-muted font-body leading-relaxed">
+                                High-fashion editorial storefront with an immersive 3-level interactive lookbook, live multi-tag product filtering catalog, quickview modals, and cart architecture.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs font-mono tracking-wider text-brand-muted">HTML / CSS / JS</span>
+                            <a href="clothing_store_site/index.html" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-lg transition-all flex items-center gap-2">
+                                Launch Site <span class="material-symbols-outlined text-sm">east</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Hotel Site -->
+                <div class="group relative bg-brand-card border border-white/10 hover:border-emerald-500/50 rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(16,185,129,0.2)] flex flex-col justify-between">
+                    <div class="aspect-[16/10] bg-slate-900 overflow-hidden relative">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                            <source src="hotel_site/images/Drone_shot_jungle_coastline_villa.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-6 left-6 bg-emerald-500/20 border border-emerald-500/50 backdrop-blur-md text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                            Ultra-Luxury Hospitality
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-6 flex-grow flex flex-col justify-between relative z-10">
+                        <div class="space-y-3">
+                            <h3 class="text-3xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition-colors">The Grand Serenade | Hotel Site</h3>
+                            <p class="text-sm text-brand-muted font-body leading-relaxed">
+                                Zero-carbon private sanctuary eco-resort equipped with an interactive satellite map explorer, before/after spa slider, tabbed Michelin dining menu, and multi-step live quotation engine.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs font-mono tracking-wider text-brand-muted">HTML / CSS / JS</span>
+                            <a href="hotel_site/index.html" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-lg transition-all flex items-center gap-2">
+                                Launch Site <span class="material-symbols-outlined text-sm">east</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. School Site -->
+                <div class="group relative bg-brand-card border border-white/10 hover:border-cyan-500/50 rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(6,182,212,0.2)] flex flex-col justify-between">
+                    <div class="aspect-[16/10] bg-slate-900 overflow-hidden relative">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                            <source src="school_site/images/University_lecture_hall_to_robot._202606250910.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                        <div class="absolute top-6 left-6 bg-cyan-500/20 border border-cyan-500/50 backdrop-blur-md text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                            Elite Preparatory Academy
+                        </div>
+                    </div>
+                    <div class="p-10 space-y-6 flex-grow flex flex-col justify-between relative z-10">
+                        <div class="space-y-3">
+                            <h3 class="text-3xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">Veritas Academy | School Site</h3>
+                            <p class="text-sm text-brand-muted font-body leading-relaxed">
+                                Classical heritage meets neo-brutalist tech infrastructure. Showcases an interactive Academic Pathfinder Quiz, step-by-step Admissions Eligibility Checker, and live events registry.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs font-mono tracking-wider text-brand-muted">HTML / CSS / JS</span>
+                            <a href="school_site/index.html" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-lg transition-all flex items-center gap-2">
+                                Launch Site <span class="material-symbols-outlined text-sm">east</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Excellence Grid -->
+        <section class="border border-white/10 bg-brand-card/50 backdrop-blur-xl rounded-[3rem] p-12 md:p-16 shadow-2xl space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-neon uppercase">Engineering Matrix</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Why Our Prototypes Stand Out</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="space-y-4 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-brand-neon">palette</span>
+                    <h4 class="text-lg font-bold text-white tracking-tight">Immersive Visual Identity</h4>
+                    <p class="text-sm text-brand-muted font-body leading-relaxed">
+                        Every vertical utilizes an independent, highly-tailored design system. From rich HSL color spaces and sleek glassmorphism to custom typography hierarchies.
+                    </p>
+                </div>
+                <div class="space-y-4 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-brand-neon">touch_app</span>
+                    <h4 class="text-lg font-bold text-white tracking-tight">Rich Interaction Architecture</h4>
+                    <p class="text-sm text-brand-muted font-body leading-relaxed">
+                        Zero static placeholders. Fully dynamic JavaScript state management powers live cart calculations, multi-step configurators, image comparison sliders, and guided quiz funnels.
+                    </p>
+                </div>
+                <div class="space-y-4 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-brand-neon">bolt</span>
+                    <h4 class="text-lg font-bold text-white tracking-tight">Production-Ready Code</h4>
+                    <p class="text-sm text-brand-muted font-body leading-relaxed">
+                        Strict separation of concerns using clean semantic HTML5, modular CSS/Tailwind utilities, and vanilla ES6 JavaScript designed for lightning-fast edge deployment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="relative z-10 bg-brand-card border-t border-white/10 py-16 px-6 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-xs text-brand-muted font-body">
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold">HT</div>
+                <span class="font-bold text-white tracking-wider">HERMARK TECH SOLUTIONS</span>
+            </div>
+            <div class="flex flex-wrap gap-8 tracking-widest uppercase font-semibold">
+                <a href="https://hermarktech.com/" target="_blank" class="hover:text-brand-neon transition-colors">Official Portal</a>
+                <a href="#mockups" class="hover:text-brand-neon transition-colors">Demonstrations</a>
+                <a href="https://hermarktech.com/" target="_blank" class="text-brand-neon hover:underline">Contact Executive Engineering</a>
+            </div>
+            <p class="tracking-widest uppercase">© 2026 HERMARK TECH SOLUTIONS. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

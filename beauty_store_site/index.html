@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luminary Luxe | Clean, Organic Luxury Skincare & Beauty">
+    <title>Luminary Luxe | Premium Organic Beauty</title>
+    
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons & Favicon -->
+    <link rel="icon" href="https://api.iconify.design/material-symbols:spa.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#d4af37',
+                            rosegold: '#e0a899',
+                            dark: '#111111',
+                            light: '#fcfcfc',
+                            muted: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-rosegold/30 selection:text-brand-dark">
+
+    <!-- Built by Hermark Tech Floating Badge -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://hermarktech.com/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-full hover:scale-105 transition-all duration-300 group">
+            <span class="w-2 h-2 rounded-full bg-[#007a87] animate-pulse"></span>
+            <span class="text-[10px] font-semibold tracking-widest uppercase text-slate-700 group-hover:text-[#007a87] transition-colors">Built by Hermark Tech</span>
+            <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:translate-x-0.5 transition-transform">arrow_forward_ios</span>
+        </a>
+    </div>
+
+    <!-- Sticky Glassmorphic Header -->
+    <header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-brand-dark">Luminary <span class="text-brand-rosegold italic">Luxe</span></a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium tracking-wide text-brand-muted">
+                    <a href="#skincare-quiz" class="hover:text-brand-dark transition-colors">AI Routine Finder</a>
+                    <a href="#products" class="hover:text-brand-dark transition-colors">Bespoke Collection</a>
+                    <a href="#science" class="hover:text-brand-dark transition-colors">Botanical Laboratories</a>
+                    <a href="#ingredients" class="hover:text-brand-dark transition-colors">Transparency</a>
+                    <a href="#reviews" class="hover:text-brand-dark transition-colors">Testimonials</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openQuiz()" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-brand-rosegold/50 text-xs font-semibold tracking-widest uppercase text-brand-dark hover:bg-brand-rosegold/10 transition-colors">
+                    <span class="material-symbols-outlined text-sm text-brand-rosegold">smart_toy</span>
+                    Skin Quiz
+                </button>
+                <button onclick="openCartDrawer()" class="relative p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl text-brand-dark">local_mall</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-brand-rosegold text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Split-Screen Before/After Interactive Slider -->
+    <section class="relative min-h-[85vh] flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-12 gap-12 overflow-hidden">
+        <!-- Ambient Hero Background Image -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <img src="images/hero_beauty_ambient.png" alt="Hero Ambient Background" class="w-full h-full object-cover opacity-15">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-light via-brand-light/80 to-transparent"></div>
+        </div>
+
+        <div class="w-full lg:w-5/12 space-y-8 z-10 text-left relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-rosegold/10 border border-brand-rosegold/30">
+                <span class="material-symbols-outlined text-sm text-brand-rosegold">spa</span>
+                <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-dark">Cellular Renewal Technology</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-[1.15] tracking-tight">
+                Flawless Skin, <br>
+                <span class="italic font-normal text-brand-rosegold">Uncompromised</span> <br>
+                Purity.
+            </h1>
+            <p class="text-base md:text-lg text-brand-muted font-light leading-relaxed">
+                Experience the world’s first clean luxury biotics. Clinically proven to restore the epidermal lipid barrier and achieve transcendent radiance within 14 days.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <button onclick="openQuiz()" class="px-8 py-4 rounded-full bg-brand-dark text-white text-xs font-bold tracking-widest uppercase hover:bg-black/80 transition-all shadow-lg shadow-black/10 hover:shadow-black/20 flex items-center justify-center gap-3">
+                    Start AI Routine Quiz
+                    <span class="material-symbols-outlined text-brand-rosegold text-base">arrow_forward</span>
+                </button>
+                <a href="#products" class="px-8 py-4 rounded-full border border-slate-300 text-brand-dark text-xs font-bold tracking-widest uppercase hover:border-brand-dark transition-all text-center flex items-center justify-center">
+                    Explore Collection
+                </a>
+            </div>
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80">
+                <div>
+                    <p class="font-serif text-2xl font-bold text-brand-dark">98%</p>
+                    <p class="text-xs text-brand-muted tracking-wider uppercase mt-1">Barrier Restored</p>
+                </div>
+                <div>
+                    <p class="font-serif text-2xl font-bold text-brand-dark">100%</p>
+                    <p class="text-xs text-brand-muted tracking-wider uppercase mt-1">Sustainably Sourced</p>
+                </div>
+                <div>
+                    <p class="font-serif text-2xl font-bold text-brand-dark">0%</p>
+                    <p class="text-xs text-brand-muted tracking-wider uppercase mt-1">Synthetic Parabens</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before / After Interactive Slider -->
+        <div class="w-full lg:w-7/12 flex items-center justify-center relative z-10">
+            <div class="relative w-full max-w-[600px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border-4 border-white select-none bg-slate-100">
+                <!-- After Image (Base / Bottom) -->
+                <img src="images/skin_after.png" alt="After Skincare Radiance" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                <div class="absolute bottom-6 right-6 bg-brand-dark/80 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white/20 z-10">
+                    Day 14: Radiant
+                </div>
+
+                <!-- Before Image (Clipped overlay) -->
+                <div id="slider-before" class="absolute inset-0 pointer-events-none z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                    <img src="images/skin_before.png" alt="Before Skincare Treatment" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                    <div class="absolute bottom-6 left-6 bg-brand-dark/80 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white/20">
+                        Day 1: Baseline
+                    </div>
+                </div>
+
+                <!-- Slider Handle -->
+                <div id="slider-handle" class="absolute top-0 bottom-0 left-1/2 w-1.5 bg-brand-rosegold flex items-center justify-center z-20 pointer-events-none" style="transform: translateX(-50%);">
+                    <div class="w-12 h-12 rounded-full bg-brand-dark border-2 border-brand-rosegold text-brand-rosegold flex items-center justify-center shadow-2xl pointer-events-auto">
+                        <span class="material-symbols-outlined text-sm">swap_horiz</span>
+                    </div>
+                </div>
+
+                <input type="range" id="slider-input" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive AI Skincare Routine Quiz Section -->
+    <section id="skincare-quiz" class="py-24 bg-white border-y border-slate-100 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-xs font-bold tracking-[0.3em] text-brand-rosegold uppercase">Bespoke Intelligence</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark mt-3 mb-6">AI Skincare Routine Quiz</h2>
+            <p class="text-brand-muted max-w-2xl mx-auto text-sm md:text-base mb-12 leading-relaxed">
+                Every cellular structure is unique. Answer 3 quick questions to let our proprietary dermatological AI formulate your personalized bio-active skincare regimen.
+            </p>
+
+            <!-- Quiz Box -->
+            <div class="bg-brand-light border border-slate-200/80 rounded-3xl p-8 md:p-12 shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-left relative min-h-[380px] flex flex-col justify-between">
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mb-8">
+                    <div id="quiz-progress" class="bg-brand-rosegold h-full w-1/3 transition-all duration-500"></div>
+                </div>
+
+                <!-- Step 1 -->
+                <div id="quiz-step-1" class="quiz-step space-y-6">
+                    <h3 class="text-xl font-serif font-bold text-brand-dark">1. What is your primary epidermal concern?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">auto_awesome</span>
+                            <span class="font-bold text-sm text-brand-dark">Dullness & Aging</span>
+                            <span class="text-xs text-brand-muted mt-1">Seeking radiant firm skin</span>
+                            <input type="radio" name="concern" value="aging" class="hidden" onclick="selectQuizOption(1)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">water_drop</span>
+                            <span class="font-bold text-sm text-brand-dark">Acute Dryness</span>
+                            <span class="text-xs text-brand-muted mt-1">Requiring deep lipid repair</span>
+                            <input type="radio" name="concern" value="dryness" class="hidden" onclick="selectQuizOption(1)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">mode_heat</span>
+                            <span class="font-bold text-sm text-brand-dark">Sensitivity & Redness</span>
+                            <span class="text-xs text-brand-muted mt-1">Gentle microbiome calm</span>
+                            <input type="radio" name="concern" value="sensitivity" class="hidden" onclick="selectQuizOption(1)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Hidden initially) -->
+                <div id="quiz-step-2" class="quiz-step space-y-6 hidden">
+                    <h3 class="text-xl font-serif font-bold text-brand-dark">2. How would you describe your environmental exposure?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">location_city</span>
+                            <span class="font-bold text-sm text-brand-dark">Urban Pollution</span>
+                            <span class="text-xs text-brand-muted mt-1">Daily smog & blue light</span>
+                            <input type="radio" name="environment" value="urban" class="hidden" onclick="selectQuizOption(2)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">wb_sunny</span>
+                            <span class="font-bold text-sm text-brand-dark">High UV Exposure</span>
+                            <span class="text-xs text-brand-muted mt-1">Sunlight & outdoor climate</span>
+                            <input type="radio" name="environment" value="sun" class="hidden" onclick="selectQuizOption(2)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">ac_unit</span>
+                            <span class="font-bold text-sm text-brand-dark">Air-Conditioned / Dry</span>
+                            <span class="text-xs text-brand-muted mt-1">Indoor climate stress</span>
+                            <input type="radio" name="environment" value="indoor" class="hidden" onclick="selectQuizOption(2)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Hidden initially) -->
+                <div id="quiz-step-3" class="quiz-step space-y-6 hidden">
+                    <h3 class="text-xl font-serif font-bold text-brand-dark">3. What texture preference invigorates your skin?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">lens_blur</span>
+                            <span class="font-bold text-sm text-brand-dark">Featherweight Serum</span>
+                            <span class="text-xs text-brand-muted mt-1">Instant deep absorption</span>
+                            <input type="radio" name="texture" value="serum" class="hidden" onclick="selectQuizOption(3)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">blur_on</span>
+                            <span class="font-bold text-sm text-brand-dark">Rich Velvet Cream</span>
+                            <span class="text-xs text-brand-muted mt-1">Luxurious cushioning barrier</span>
+                            <input type="radio" name="texture" value="cream" class="hidden" onclick="selectQuizOption(3)">
+                        </label>
+                        <label class="quiz-option p-6 rounded-2xl border-2 border-slate-200 hover:border-brand-rosegold cursor-pointer flex flex-col items-center text-center transition-all bg-white shadow-sm">
+                            <span class="material-symbols-outlined text-3xl text-brand-rosegold mb-3">adjust</span>
+                            <span class="font-bold text-sm text-brand-dark">Potent Botanical Elixir</span>
+                            <span class="text-xs text-brand-muted mt-1">Concentrated active oils</span>
+                            <input type="radio" name="texture" value="elixir" class="hidden" onclick="selectQuizOption(3)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Quiz Results / Recommended Bundle -->
+                <div id="quiz-results" class="quiz-step hidden flex flex-col md:flex-row items-center gap-8 py-4">
+                    <div class="w-full md:w-1/2 space-y-4">
+                        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-brand-rosegold uppercase">
+                            <span class="material-symbols-outlined text-base">verified</span> AI Prescription Match
+                        </span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-brand-dark">The Radiant Shield Routine</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            Based on your cellular requirements, our dermatological AI has engineered a 3-step ritual combining hyaluronic biotics, antioxidant defense shields, and ceramide-rich barrier cushioning.
+                        </p>
+                        <div class="p-4 bg-white rounded-2xl border border-slate-200 space-y-2 text-xs">
+                            <div class="flex justify-between font-bold text-brand-dark"><span>1x Phyto-Glow Bio Serum</span><span>$88</span></div>
+                            <div class="flex justify-between font-bold text-brand-dark"><span>1x Resveratrol Cell Balm</span><span>$112</span></div>
+                            <div class="flex justify-between font-bold text-brand-dark"><span>1x Botanical Clarifying Tonic</span><span>$74</span></div>
+                            <div class="pt-2 border-t border-slate-100 flex justify-between text-sm font-bold text-brand-dark">
+                                <span>Bundle Special (15% Off)</span><span class="text-brand-rosegold">$232.90</span>
+                            </div>
+                        </div>
+                        <button onclick="addBundleToCart()" class="w-full py-4 bg-brand-dark hover:bg-black/80 text-white font-bold text-xs tracking-widest uppercase rounded-full shadow-lg transition-all flex items-center justify-center gap-3">
+                            <span class="material-symbols-outlined text-brand-rosegold text-base">shopping_bag</span>
+                            Add Routine to Bag ($232.90)
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100 relative">
+                        <img src="images/bio_serum.png" alt="Recommended Skincare Routine" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-brand-dark border border-slate-200">
+                            3-Piece Ritual
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div id="quiz-navigation" class="flex justify-between items-center pt-8 border-t border-slate-200/80 mt-8">
+                    <button onclick="prevQuizStep()" id="btn-quiz-prev" class="text-xs font-bold tracking-widest uppercase text-brand-muted hover:text-brand-dark transition-colors disabled:opacity-30 disabled:pointer-events-none" disabled>
+                        Back
+                    </button>
+                    <span id="quiz-step-text" class="text-xs font-medium text-brand-muted">Step 1 of 3</span>
+                    <button onclick="nextQuizStep()" id="btn-quiz-next" class="px-6 py-2.5 bg-brand-dark text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-black/80 transition-all disabled:opacity-50 disabled:pointer-events-none" disabled>
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section with Quick-View Drawer Trigger -->
+    <section id="products" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-rosegold uppercase">Bespoke Collection</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark mt-3">Architected For Transcendence</h2>
+            </div>
+            <p class="text-brand-muted max-w-md text-sm leading-relaxed">
+                Formulated in limited clinical micro-batches using bio-fermented active compounds. Strictly zero synthetic additives.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product Card 1 -->
+            <div class="group relative bg-white border border-slate-200/80 rounded-[2rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col">
+                <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                    <img src="images/bio_serum.png" alt="Phyto-Glow Bio Serum" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <button onclick="openQuickView(1)" class="absolute inset-x-4 bottom-4 py-3 bg-white/90 backdrop-blur-md text-brand-dark text-xs font-bold tracking-widest uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-slate-200 hover:bg-brand-dark hover:text-white flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-base">visibility</span> Quick View
+                    </button>
+                    <span class="absolute top-4 left-4 bg-brand-dark text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Best Seller</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-grow bg-white">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-brand-rosegold mb-1">Concentrated Active</p>
+                        <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-rosegold transition-colors">Phyto-Glow Bio Serum</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Bio-fermented nutrient elixir delivering intense deep cellular hydration.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg text-brand-dark">$88.00</span>
+                        <button onclick="addToCart('Phyto-Glow Bio Serum', 88, 'images/bio_serum.png')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-dark hover:text-white transition-colors flex items-center justify-center text-brand-dark">
+                            <span class="material-symbols-outlined text-base">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="group relative bg-white border border-slate-200/80 rounded-[2rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col">
+                <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                    <img src="images/cell_balm.avif" alt="Resveratrol Cell Balm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <button onclick="openQuickView(2)" class="absolute inset-x-4 bottom-4 py-3 bg-white/90 backdrop-blur-md text-brand-dark text-xs font-bold tracking-widest uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-slate-200 hover:bg-brand-dark hover:text-white flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-base">visibility</span> Quick View
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-grow bg-white">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-brand-rosegold mb-1">Overnight Repair</p>
+                        <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-rosegold transition-colors">Resveratrol Cell Balm</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Ultra-rich cushioning balm packed with potent antioxidant resveratrol.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg text-brand-dark">$112.00</span>
+                        <button onclick="addToCart('Resveratrol Cell Balm', 112, 'images/cell_balm.avif')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-dark hover:text-white transition-colors flex items-center justify-center text-brand-dark">
+                            <span class="material-symbols-outlined text-base">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="group relative bg-white border border-slate-200/80 rounded-[2rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col">
+                <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                    <img src="images/clarifying_tonic.avif" alt="Botanical Clarifying Tonic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <button onclick="openQuickView(3)" class="absolute inset-x-4 bottom-4 py-3 bg-white/90 backdrop-blur-md text-brand-dark text-xs font-bold tracking-widest uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-slate-200 hover:bg-brand-dark hover:text-white flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-base">visibility</span> Quick View
+                    </button>
+                    <span class="absolute top-4 left-4 bg-brand-rosegold text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">Award Winner</span>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-grow bg-white">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-brand-rosegold mb-1">Micro-Exfoliant</p>
+                        <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-rosegold transition-colors">Botanical Clarifying Tonic</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Gentle daily BHA tonic infused with active rose quartz electrolytes.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg text-brand-dark">$74.00</span>
+                        <button onclick="addToCart('Botanical Clarifying Tonic', 74, 'images/clarifying_tonic.avif')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-dark hover:text-white transition-colors flex items-center justify-center text-brand-dark">
+                            <span class="material-symbols-outlined text-base">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="group relative bg-white border border-slate-200/80 rounded-[2rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col">
+                <div class="aspect-square bg-slate-100 overflow-hidden relative">
+                    <img src="images/eye_cloud.avif" alt="Tri-Hyaluronic Eye Cloud" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <button onclick="openQuickView(4)" class="absolute inset-x-4 bottom-4 py-3 bg-white/90 backdrop-blur-md text-brand-dark text-xs font-bold tracking-widest uppercase rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-slate-200 hover:bg-brand-dark hover:text-white flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-base">visibility</span> Quick View
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col justify-between flex-grow bg-white">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-brand-rosegold mb-1">Active Infusion</p>
+                        <h3 class="font-serif font-bold text-lg text-brand-dark group-hover:text-brand-rosegold transition-colors">Tri-Hyaluronic Eye Cloud</h3>
+                        <p class="text-xs text-brand-muted mt-2 line-clamp-2">Weightless eye cloud instantly lifting and de-puffing the orbital matrix.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg text-brand-dark">$95.00</span>
+                        <button onclick="addToCart('Tri-Hyaluronic Eye Cloud', 95, 'images/eye_cloud.avif')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-dark hover:text-white transition-colors flex items-center justify-center text-brand-dark">
+                            <span class="material-symbols-outlined text-base">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botanical Laboratories & Science Matrix Section -->
+    <section id="science" class="py-24 bg-brand-dark text-white border-y border-white/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-6 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20">
+                    <span class="material-symbols-outlined text-sm text-brand-rosegold">biotech</span>
+                    <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-white">Supercritical CO2 Distillation</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-white leading-[1.1]">
+                    The Luminary <br>
+                    <span class="italic text-brand-rosegold font-normal">Science Matrix.</span>
+                </h2>
+                <p class="text-base text-white/70 font-light leading-relaxed">
+                    Our state-of-the-art botanical research enclave combines advanced AI cellular mapping with supercritical cold enzyme extractions. By harvesting active phytos at peak molecular potency, we maintain complete structural integrity without chemical degradation.
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
+                    <div class="space-y-2">
+                        <h4 class="font-serif font-bold text-xl text-brand-rosegold">Supercritical Extraction</h4>
+                        <p class="text-xs text-white/60 leading-relaxed font-light">Yields 300% higher antioxidant concentrations compared to traditional steam pressing.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-serif font-bold text-xl text-brand-rosegold">Cellular AI Diagnostics</h4>
+                        <p class="text-xs text-white/60 leading-relaxed font-light">Accurately formulates targeted bio-regimens based on real-time environmental lipid stress.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-800 border border-white/20 shadow-2xl relative group">
+                    <img src="images/ai_quiz_lab.png" alt="AI Skincare Diagnostic Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] tracking-[0.2em] text-brand-rosegold uppercase font-bold">Facility // 01</span>
+                            <h4 class="font-serif font-bold text-lg text-white mt-1">AI Diagnostic Cleanroom</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-800 border border-white/20 shadow-2xl relative group sm:mt-12">
+                    <img src="images/brand_story_botanical.png" alt="Botanical Extractions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] tracking-[0.2em] text-brand-rosegold uppercase font-bold">Facility // 02</span>
+                            <h4 class="font-serif font-bold text-lg text-white mt-1">Botanical Distillation</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients & Transparency Section: Clean Horizontal Accordion -->
+    <section id="ingredients" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-[0.3em] text-brand-rosegold uppercase">Radical Transparency</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark mt-3">Exquisitely Clean Formulas</h2>
+                <p class="text-brand-muted text-sm mt-4 leading-relaxed">
+                    Explore the clinical science and ethical sourcing backing our pure bio-cellular compounds. Click to expand each pillar.
+                </p>
+            </div>
+
+            <!-- Horizontal / Clean Accordion -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Accordion Item 1 -->
+                <div class="border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 bg-brand-light">
+                    <button onclick="toggleAccordion(1)" class="w-full p-8 text-left flex items-center justify-between font-serif text-xl font-bold text-brand-dark hover:text-brand-rosegold transition-colors">
+                        <span class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-brand-rosegold text-3xl">psychology</span>
+                            100% Bio-Fermented Actives
+                        </span>
+                        <span id="acc-icon-1" class="material-symbols-outlined text-brand-muted transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div id="acc-content-1" class="px-8 pb-8 text-brand-muted text-sm leading-relaxed border-t border-slate-100 hidden">
+                        Our active phytos are fermented through a proprietary 48-hour cold enzyme matrix. This reduces the molecular weight by 40%, ensuring deep cellular penetration into the sub-dermal barrier without surface irritation or stinging.
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 bg-brand-light">
+                    <button onclick="toggleAccordion(2)" class="w-full p-8 text-left flex items-center justify-between font-serif text-xl font-bold text-brand-dark hover:text-brand-rosegold transition-colors">
+                        <span class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-brand-rosegold text-3xl">eco</span>
+                            Zero Synthetic Additives & Parabens
+                        </span>
+                        <span id="acc-icon-2" class="material-symbols-outlined text-brand-muted transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div id="acc-content-2" class="px-8 pb-8 text-brand-muted text-sm leading-relaxed border-t border-slate-100 hidden">
+                        We formulate strictly without silicones, synthetic parabens, artificial fragrances, or mineral sulfates. Every preservative used is 100% plant-derived, preserving the skin’s natural microflora and microbiome integrity.
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="border border-slate-200 rounded-3xl overflow-hidden transition-all duration-300 bg-brand-light">
+                    <button onclick="toggleAccordion(3)" class="w-full p-8 text-left flex items-center justify-between font-serif text-xl font-bold text-brand-dark hover:text-brand-rosegold transition-colors">
+                        <span class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-brand-rosegold text-3xl">public</span>
+                            Certified Carbon-Neutral Ethical Sourcing
+                        </span>
+                        <span id="acc-icon-3" class="material-symbols-outlined text-brand-muted transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div id="acc-content-3" class="px-8 pb-8 text-brand-muted text-sm leading-relaxed border-t border-slate-100 hidden">
+                        Every botanical harvest is audited by third-party fair trade conservationists. Our glass vessels are custom-engineered from 85% recycled European architectural silica, perfectly recyclable and elegantly refillable.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Reviews: Video / Micro-Influencer Carousel -->
+    <section id="reviews" class="py-24 max-w-7xl mx-auto px-6 overflow-hidden">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-bold tracking-[0.3em] text-brand-rosegold uppercase">Celebrated Worldwide</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark mt-3">The Dermatological Verdict</h2>
+        </div>
+
+        <div id="reviews-carousel" class="flex gap-8 overflow-x-auto pb-8 snap-x scroll-smooth hide-scrollbar">
+            <!-- Review Card 1 -->
+            <div class="min-w-[320px] md:min-w-[400px] bg-white border border-slate-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between snap-start">
+                <div>
+                    <div class="flex items-center gap-1 text-brand-gold mb-6">
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                    </div>
+                    <p class="font-serif text-lg text-brand-dark italic mb-6 leading-relaxed">
+                        "As a clinical dermatologist, I am intensely skeptical of clean beauty claims. Luminary Luxe completely transformed my patients' lipid barrier integrity within two weeks."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                    <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0">
+                        <img src="images/head_dermatologist.avif" alt="Dr. Alena Vance" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-brand-dark">Dr. Alena Vance, MD</h4>
+                        <p class="text-[11px] text-brand-muted uppercase tracking-widest mt-0.5">Head Dermatologist, NY Bio-Clinic</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="min-w-[320px] md:min-w-[400px] bg-white border border-slate-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between snap-start">
+                <div>
+                    <div class="flex items-center gap-1 text-brand-gold mb-6">
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                    </div>
+                    <p class="font-serif text-lg text-brand-dark italic mb-6 leading-relaxed">
+                        "The Phyto-Glow Bio Serum feels like liquid silk. It absorbs instantaneously without any sticky residue, and my skin glows so radiantly I've entirely stopped wearing foundation."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                    <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0">
+                        <img src="images/beauty_editor.avif" alt="Giselle Monet" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-brand-dark">Giselle Monet</h4>
+                        <p class="text-[11px] text-brand-muted uppercase tracking-widest mt-0.5">Beauty Editor & Content Architect</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="min-w-[320px] md:min-w-[400px] bg-white border border-slate-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between snap-start">
+                <div>
+                    <div class="flex items-center gap-1 text-brand-gold mb-6">
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                        <span class="material-symbols-outlined text-lg">star</span>
+                    </div>
+                    <p class="font-serif text-lg text-brand-dark italic mb-6 leading-relaxed">
+                        "Architected perfectly. The AI skincare routine match prescribed the exact three items my sensitive skin required to combat extreme indoor AC stress in Tokyo."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                    <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-100 border border-slate-200 shrink-0">
+                        <img src="images/architecture%20director.avif" alt="Elena Rostova" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-brand-dark">Elena Rostova</h4>
+                        <p class="text-[11px] text-brand-muted uppercase tracking-widest mt-0.5">Global Architecture Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick-View Side Drawer Modal -->
+    <div id="quickview-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0">
+        <!-- Backdrop -->
+        <div onclick="closeQuickView()" class="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm pointer-events-auto"></div>
+        
+        <!-- Drawer Panel -->
+        <div id="quickview-panel" class="absolute top-0 right-0 bottom-0 w-full max-w-xl bg-white shadow-2xl pointer-events-auto translate-x-full transition-transform duration-500 flex flex-col justify-between overflow-y-auto">
+            <div class="p-8 space-y-6">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <span class="text-xs font-bold tracking-widest text-brand-rosegold uppercase">Product Quick View</span>
+                    <button onclick="closeQuickView()" class="p-2 rounded-full hover:bg-slate-100 transition-colors text-brand-dark">
+                        <span class="material-symbols-outlined text-2xl">close</span>
+                    </button>
+                </div>
+
+                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 relative">
+                    <img id="qv-img" src="images/bio_serum.png" alt="Quickview Product" class="w-full h-full object-cover">
+                </div>
+
+                <div>
+                    <h3 id="qv-title" class="font-serif font-bold text-2xl md:text-3xl text-brand-dark">Phyto-Glow Bio Serum</h3>
+                    <p id="qv-price" class="text-xl font-serif font-bold text-brand-rosegold mt-2">$88.00</p>
+                    <p id="qv-desc" class="text-brand-muted text-sm mt-4 leading-relaxed">
+                        Bio-fermented nutrient elixir delivering intense deep cellular hydration. Engineered with clinical-grade phytos to optimize your daily luminosity and smooth micro-crevices.
+                    </p>
+                </div>
+
+                <div class="space-y-3 pt-4 border-t border-slate-100">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-brand-dark">Clinical Highlights</h4>
+                    <ul class="text-xs text-brand-muted space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-brand-rosegold">check_circle</span> 100% Plant-Derived Peptides</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-brand-rosegold">check_circle</span> Cold-Fermented Bio Matrix</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-brand-rosegold">check_circle</span> Formulated for Hypoallergenic Barriers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Add to Bag Footer CTA -->
+            <div class="p-8 border-t border-slate-100 bg-brand-light">
+                <button id="qv-add-btn" onclick="addQvToCart()" class="w-full py-4 bg-brand-dark hover:bg-black/80 text-white font-bold text-xs tracking-widest uppercase rounded-full shadow-lg transition-all flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined text-brand-rosegold text-base">local_mall</span>
+                    Add To Bag
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Side Drawer Modal -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 opacity-0">
+        <!-- Backdrop -->
+        <div onclick="closeCartDrawer()" class="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm pointer-events-auto"></div>
+        
+        <!-- Drawer Panel -->
+        <div id="cart-panel" class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl pointer-events-auto translate-x-full transition-transform duration-500 flex flex-col justify-between">
+            <div class="p-8 flex flex-col flex-grow overflow-y-auto space-y-6">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <span class="font-serif text-xl font-bold text-brand-dark">Your Bespoke Bag</span>
+                    <button onclick="closeCartDrawer()" class="p-2 rounded-full hover:bg-slate-100 transition-colors text-brand-dark">
+                        <span class="material-symbols-outlined text-2xl">close</span>
+                    </button>
+                </div>
+
+                <!-- Items Container -->
+                <div id="cart-items" class="flex-grow flex flex-col gap-4 py-2">
+                    <div class="flex flex-col items-center justify-center flex-grow text-center text-brand-muted space-y-3 my-auto">
+                        <span class="material-symbols-outlined text-5xl text-slate-300">work_history</span>
+                        <p class="text-sm font-medium">Your bespoke beauty bag is currently empty.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Footer -->
+            <div class="p-8 border-t border-slate-100 bg-brand-light space-y-4">
+                <div class="flex justify-between items-center text-brand-dark font-serif font-bold text-lg">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <p class="text-[11px] text-brand-muted">Complimentary carbon-neutral express delivery included.</p>
+                <button onclick="alert('Thank you for choosing Luminary Luxe. This premium mockup checkout is complete!')" class="w-full py-4 bg-brand-dark hover:bg-black/80 text-white font-bold text-xs tracking-widest uppercase rounded-full shadow-lg transition-all flex items-center justify-center gap-3">
+                    Proceed To Checkout
+                    <span class="material-symbols-outlined text-brand-rosegold text-base">lock</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Oversized Typography Footer & Newsletter CTA -->
+    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6 border-t border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <!-- Oversized CTA -->
+            <div class="text-center max-w-4xl mx-auto space-y-8">
+                <h2 class="text-5xl sm:text-7xl md:text-8xl font-serif font-bold tracking-tight text-white leading-none">
+                    Join The <span class="text-brand-rosegold italic">Luminaries.</span>
+                </h2>
+                <p class="text-white/70 text-sm md:text-base max-w-xl mx-auto font-light leading-relaxed">
+                    Subscribe to receive private invitations to exclusive cellular micro-batch releases and 15% off your inaugural order.
+                </p>
+                <form onsubmit="event.preventDefault(); alert('Welcome to Luminary Luxe. Your exclusive access has been granted.');" class="max-w-md mx-auto flex gap-2 p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                    <input type="email" placeholder="Enter your email address..." required class="bg-transparent px-6 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none flex-grow">
+                    <button type="submit" class="px-8 py-3 bg-brand-rosegold hover:bg-brand-rosegold/80 text-brand-dark font-bold text-xs tracking-widest uppercase rounded-full transition-all">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+
+            <div class="pt-16 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 text-xs text-white/50 font-medium">
+                <div class="flex items-center gap-3">
+                    <span class="font-serif font-bold text-lg text-white tracking-wider">Luminary <span class="text-brand-rosegold italic">Luxe</span></span>
+                </div>
+                <div class="flex flex-wrap gap-8 tracking-widest uppercase">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Formulation</a>
+                    <a href="#" class="hover:text-white transition-colors">Retail Stockists</a>
+                    <a href="https://hermarktech.com/" target="_blank" class="hover:text-brand-rosegold transition-colors font-bold text-brand-rosegold">Engineered by Hermark Tech</a>
+                </div>
+                <p class="tracking-wider">© 2026 LUMINARY LUXE. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
